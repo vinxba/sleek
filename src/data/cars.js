@@ -43,6 +43,12 @@ import pathfinderImg from  "@/assets/cars/fleet/pathfinderImg.jpg"
 import patrolImg from  "@/assets/cars/fleet/patrolImg.jpg"
 import sentraImg from "@/assets/cars/fleet/sentraImg.jpg"
 import patrolNismoImg from  "@/assets/cars/fleet/patrolNismoImg.jpg"
+import pegasImg from "@/assets/cars/fleet/pegasImg.jpg"
+import cadenzaImg from "@/assets/cars/fleet/cadenzaImg.jpg"
+import optimaImg from "@/assets/cars/fleet/optimaImg.jpg"
+import sportageImg from "@/assets/cars/fleet/sportageImg.jpg"
+import sonetImg from "@/assets/cars/fleet/sonetImg.jpg"
+import sorentoImg from "@/assets/cars/fleet/sorentoImg.jpg"
 
 
 export const fleetCars = [
@@ -3161,6 +3167,372 @@ export const fleetCars = [
     },
     description: "Rent the Nissan Patrol Nismo in Dubai for AED 600 per day. A high-performance version of the iconic Patrol with sporty design and enhanced power. Perfect for luxury and performance enthusiasts. Includes 300 km daily limit.",
 },
+
+{
+    id: 137,
+    brand: "Kia",
+    name: "Kia Sorento",
+    category: "suv",
+    image: sorentoImg,
+    priceDay: 190,
+    priceWeek: 1150,
+    priceMonth: 3600,
+    mileageLimit: 300,
+    additionalMileage: 2.5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 191,
+        seats: 7,
+    },
+    overview: {
+        bodyType: "Mid-size SUV",
+        make: "Kia",
+        model: "Sorento",
+        engineCapacity: "2.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.25-inch Display",
+            "Digital Cluster",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Roof Rails",
+            "Panoramic Sunroof"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Blind Spot Monitoring",
+            "Rear Camera",
+            "Forward Collision Warning"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Kia Sorento in Dubai for AED 190 per day. A spacious and comfortable SUV ideal for family trips and long drives. Includes 300 km daily limit.",
+},
+{
+    id: 138,
+    brand: "Kia",
+    name: "Kia Sonet",
+    category: "suv",
+    image: sonetImg,
+    priceDay: 170,
+    priceWeek: 1000,
+    priceMonth: 3200,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 120,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact SUV",
+        make: "Kia",
+        model: "Sonet",
+        engineCapacity: "1.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Red",
+    },
+    features: {
+        interior: [
+            "Leatherette Seats",
+            "10.25-inch Display",
+            "Bose Sound System",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "16-inch Alloy Wheels",
+            "LED Lighting",
+            "Sporty Design",
+            "Roof Rails"
+        ],
+        safety: [
+            "Rear Camera",
+            "ABS & Airbags",
+            "Hill Assist",
+            "Stability Control"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Kia Sonet in Dubai for AED 170 per day. A compact and stylish SUV perfect for city driving with modern features. Includes 300 km daily limit.",
+},
+{
+    id: 139,
+    brand: "Kia",
+    name: "Kia Sportage",
+    category: "suv",
+    image: sportageImg,
+    priceDay: 150,
+    priceWeek: 900,
+    priceMonth: 2800,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 190,
+        hp: 187,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact SUV",
+        make: "Kia",
+        model: "Sportage",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.25-inch Display",
+            "Dual-zone Climate Control",
+            "Digital Cluster"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Panoramic Sunroof",
+            "Sporty Design"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Blind Spot Monitoring",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth"
+        ],
+    },
+    description: "Rent the Kia Sportage in Dubai for AED 150 per day. A stylish and comfortable SUV suitable for daily driving and trips. Includes 300 km daily limit.",
+},
+{
+    id: 140,
+    brand: "Kia",
+    name: "Kia Optima",
+    category: "sedan",
+    image: optimaImg,
+    priceDay: 130,
+    priceWeek: 780,
+    priceMonth: 2400,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 178,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Mid-size Sedan",
+        make: "Kia",
+        model: "Optima",
+        engineCapacity: "2.4L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "8-inch Display",
+            "Power Seats",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design"
+        ],
+        safety: [
+            "Rear Camera",
+            "Lane Assist",
+            "ABS & Airbags"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth"
+        ],
+    },
+    description: "Rent the Kia Optima in Dubai for AED 130 per day. A stylish mid-size sedan offering comfort and performance for daily and business use. Includes 300 km daily limit.",
+},
+{
+    id: 141,
+    brand: "Kia",
+    name: "Kia Cadenza",
+    category: "sedan",
+    image: cadenzaImg,
+    priceDay: 150,
+    priceWeek: 900,
+    priceMonth: 2800,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 210,
+        hp: 290,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Full-size Sedan",
+        make: "Kia",
+        model: "Cadenza",
+        engineCapacity: "3.3L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "Black / White / Grey",
+    },
+    features: {
+        interior: [
+            "Premium Leather Seats",
+            "12.3-inch Display",
+            "Heated & Ventilated Seats",
+            "Ambient Lighting"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Lighting",
+            "Chrome Accents"
+        ],
+        safety: [
+            "Adaptive Cruise Control",
+            "Blind Spot Monitoring",
+            "360 Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Dual-zone Climate Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Premium Audio"
+        ],
+    },
+    description: "Rent the Kia Cadenza in Dubai for AED 150 per day. A premium full-size sedan offering luxury comfort and smooth performance. Includes 300 km daily limit.",
+},
+{
+    id: 142,
+    brand: "Kia",
+    name: "Kia Pegas",
+    category: "sedan",
+    image: pegasImg,
+    priceDay: 90,
+    priceWeek: 550,
+    priceMonth: 1700,
+    mileageLimit: 300,
+    additionalMileage: 1.5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 170,
+        hp: 95,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Kia",
+        model: "Pegas",
+        engineCapacity: "1.4L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Silver",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "Basic Display",
+            "Manual Seats",
+            "Air Conditioning"
+        ],
+        exterior: [
+            "15-inch Wheels",
+            "Halogen Headlights",
+            "Compact Design"
+        ],
+        safety: [
+            "ABS & Airbags",
+            "Rear Sensors"
+        ],
+        comfort: [
+            "Keyless Entry"
+        ],
+        infotainment: [
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Kia Pegas in Dubai for AED 90 per day. A budget-friendly compact sedan perfect for economical city driving. Includes 300 km daily limit.",
+},
+
 
 
 ]
