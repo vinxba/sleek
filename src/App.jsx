@@ -19,7 +19,7 @@ import RecommendedCars from "@/sections/RecommendedCars"
 import CarOfferPage from "@/pages/CarOfferPage"
 import ScrollToTop from "@/components/ScrollToTop"
 import Cars from "@/pages/Cars"
-
+import WhatsAppButton from "@/components/WhatsAppButton"
 const HomePage = () => {
 
     const [isLoading, setIsLoading] = useState(true)
@@ -75,14 +75,12 @@ const HomePage = () => {
 //     )
 
 // }
-
 const App = () => {
     return (
         <AppProvider>
             <BrowserRouter>
                 <ScrollToTop />
-
-                <Navbar /> {/* 👈 MOVE HERE */}
+                <Navbar /> 
 
                 <Routes>
                     <Route path="/" element={<HomePage />} />
@@ -90,7 +88,10 @@ const App = () => {
                     <Route path="/car/:id" element={<CarOfferPage />} />
                 </Routes>
 
-                <Footer /> {/* 👈 MOVE HERE */}
+                {/* PLACE IT HERE - OUTSIDE THE ROUTES */}
+                <WhatsAppButton /> 
+                
+                <Footer />
             </BrowserRouter>
         </AppProvider>
     )

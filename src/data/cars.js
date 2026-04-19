@@ -16,9 +16,9 @@ import BMW7 from "@/assets/cars/fleet/bmw_7series.jpg"
 import BMW5 from "@/assets/cars/fleet/bmw_5series.jpg"
 import BMW4C from "@/assets/cars/fleet/bmw_4series.jpg"
 import BMW3 from "@/assets/cars/fleet/bmw_3series.jpg"
-import BMW2 from "@/assets/cars/fleet/bmw_2series.jpg"
-
-
+import BMW2 from "@/assets/cars/fleet/bmw_2series.jpg" 
+import tahoeImg from "@/assets/cars/fleet/tahoeImg.jpg" 
+import malibuImg from "@/assets/cars/fleet/malibuImg.jpg" 
 
 
 
@@ -1271,6 +1271,138 @@ export const fleetCars = [
         },
         description: "Rent the Cadillac Escalade in Dubai for AED 1400 per day. America's premier full-size luxury SUV seats up to 8 passengers in supreme comfort. Comprehensive insurance included with 300 km daily limit. Security deposit AED 4000. Perfect for airport transfers, large families, and group travel across UAE.",
     },
+
+    {
+    id: 107,
+    brand: "Chevrolet",
+    name: "Chevrolet Tahoe",
+    category: "suv",
+    image: tahoeImg,
+    priceDay: 500,
+    priceWeek: 3000,
+    priceMonth: 9000,
+    mileageLimit: 300,
+    additionalMileage: 3,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 355,
+        seats: 7,
+    },
+    overview: {
+        bodyType: "Full-size SUV",
+        make: "Chevrolet",
+        model: "Tahoe",
+        engineCapacity: "5.3L V8",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "Black / White / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "Digital Instrument Cluster",
+            "Power Adjustable Seats",
+            "Tri-zone Climate Control",
+            "Spacious Third Row Seating"
+        ],
+        exterior: [
+            "20-inch Alloy Wheels",
+            "LED Headlights",
+            "Roof Rails",
+            "Power Liftgate"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Forward Collision Alert",
+            "Rear Parking Sensors",
+            "Airbags System"
+        ],
+        comfort: [
+            "Cruise Control",
+            "Keyless Entry",
+            "Push Start",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Touchscreen Display",
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth Connectivity"
+        ],
+    },
+    description: "Rent the Chevrolet Tahoe in Dubai for AED 500 per day. A spacious and powerful full-size SUV, perfect for families and group travel. Comes with comfortable seating for up to 7 passengers, advanced safety features, and smooth performance. Includes 300 km daily limit. Ideal for city drives and long road trips across the UAE.",
+},
+
+{
+    id: 108,
+    brand: "Chevrolet",
+    name: "Chevrolet Malibu",
+    category: "sedan",
+    image: malibuImg,
+    priceDay: 120,
+    priceWeek: 700,
+    priceMonth: 2200,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 160,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Sedan",
+        make: "Chevrolet",
+        model: "Malibu",
+        engineCapacity: "1.5L Turbo",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Premium Fabric Seats",
+            "8-inch Touchscreen Display",
+            "Power Driver Seat",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Daytime Running Lights",
+            "Chrome Grille",
+            "Power Side Mirrors"
+        ],
+        safety: [
+            "Rear Vision Camera",
+            "Lane Keep Assist",
+            "Forward Collision Alert",
+            "10 Airbags"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Button Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth Connectivity",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Chevrolet Malibu in Dubai for AED 120 per day. A stylish and fuel-efficient midsize sedan, perfect for daily commuting and comfortable city driving. Offers smooth handling, modern features, and seating for up to 5 passengers. Includes 300 km daily limit, making it ideal for both short trips and extended rentals across the UAE.",
+},
+
 ]
 
 export const faqItems = [
