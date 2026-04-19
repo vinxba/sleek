@@ -31,7 +31,14 @@ import sonataImg from   "@/assets/cars/fleet/sonataImg.jpg"
 import accentImg from    "@/assets/cars/fleet/accentImg.jpg"
 import tucsonImg from "@/assets/cars/fleet/tucsonImg.jpg"
 import cretaImg from "@/assets/cars/fleet/cretaImg.jpg"
-
+import asxImg from "@/assets/cars/fleet/asxImg.jpg"
+import eclipseImg from "@/assets/cars/fleet/eclipseImg.jpg"
+import attrageImg from  "@/assets/cars/fleet/attrageImg.jpg"
+import revueltoImg from  "@/assets/cars/fleet/revueltoImg.jpg"
+import defenderImg from   "@/assets/cars/fleet/defenderImg.jpg"
+import sportImg  from  "@/assets/cars/fleet/sportImg.jpg"
+import vogue2021Img from "@/assets/cars/fleet/vogue2021Img.jpg"
+import vogue2023Img from  "@/assets/cars/fleet/vogue2023Img.jpg"
 
 export const fleetCars = [
     {
@@ -2189,6 +2196,517 @@ export const fleetCars = [
     description: "Rent the Hyundai Elantra in Dubai for AED 140 per day. A modern and stylish compact sedan with advanced features and comfortable seating for 5 passengers. Perfect for daily and business use. Includes 300 km daily limit.",
 },
 
+{
+    id: 121,
+    brand: "Mitsubishi",
+    name: "Mitsubishi ASX",
+    category: "suv",
+    image: asxImg,
+    priceDay: 150,
+    priceWeek: 900,
+    priceMonth: 2800,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 148,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact SUV",
+        make: "Mitsubishi",
+        model: "ASX",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "8-inch Touchscreen",
+            "Manual Adjustable Seats",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Roof Rails",
+            "Sporty Design"
+        ],
+        safety: [
+            "Rear Camera",
+            "ABS & Airbags",
+            "Stability Control",
+            "Hill Start Assist"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Mitsubishi ASX in Dubai for AED 150 per day. A compact SUV offering practicality, comfort, and efficiency for daily driving and small family trips. Includes 300 km daily limit.",
+},
+{
+    id: 122,
+    brand: "Mitsubishi",
+    name: "Mitsubishi Eclipse Cross",
+    category: "suv",
+    image: eclipseImg,
+    priceDay: 120,
+    priceWeek: 700,
+    priceMonth: 2200,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 152,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact SUV",
+        make: "Mitsubishi",
+        model: "Eclipse Cross",
+        engineCapacity: "1.5L Turbo",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "Red / White / Black",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "7-inch Display",
+            "Touchpad Controller",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Lighting",
+            "Coupe-style Design",
+            "Roof Spoiler"
+        ],
+        safety: [
+            "Forward Collision Mitigation",
+            "Lane Departure Warning",
+            "Rear Camera",
+            "Airbags System"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Mitsubishi Eclipse Cross in Dubai for AED 120 per day. A stylish compact SUV with a sporty design and modern features, perfect for city driving and everyday use. Includes 300 km daily limit.",
+},
+{
+    id: 123,
+    brand: "Mitsubishi",
+    name: "Mitsubishi Attrage",
+    category: "sedan",
+    image: attrageImg,
+    priceDay: 90,
+    priceWeek: 550,
+    priceMonth: 1700,
+    mileageLimit: 300,
+    additionalMileage: 1.5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 165,
+        hp: 78,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Mitsubishi",
+        model: "Attrage",
+        engineCapacity: "1.2L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Silver / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "Basic Display",
+            "Manual Seats",
+            "Air Conditioning"
+        ],
+        exterior: [
+            "14-inch Wheels",
+            "Halogen Headlights",
+            "Compact Design",
+            "Power Mirrors"
+        ],
+        safety: [
+            "ABS & Airbags",
+            "Rear Sensors",
+            "Stability Control"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Bluetooth",
+            "USB Ports",
+            "Basic Audio System"
+        ],
+    },
+    description: "Rent the Mitsubishi Attrage in Dubai for AED 90 per day. A budget-friendly and fuel-efficient compact sedan ideal for city commuting and economical travel. Includes 300 km daily limit.",
+},
+{
+    id: 124,
+    brand: "Lamborghini",
+    name: "Lamborghini Revuelto",
+    category: "supercar",
+    image: revueltoImg,
+    priceDay: 5000,
+    priceWeek: 32000,
+    priceMonth: 120000,
+    mileageLimit: 250,
+    additionalMileage: 10,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 350,
+        hp: 1001,
+        seats: 2,
+    },
+    overview: {
+        bodyType: "Supercar",
+        make: "Lamborghini",
+        model: "Revuelto",
+        engineCapacity: "6.5L V12 Hybrid",
+        doors: 2,
+        fuelType: "Hybrid",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 1,
+        color: "Yellow / Orange / Green",
+    },
+    features: {
+        interior: [
+            "Carbon Fiber Interior",
+            "Digital Cockpit Display",
+            "Sport Bucket Seats",
+            "Ambient Lighting"
+        ],
+        exterior: [
+            "Carbon Fiber Body",
+            "Scissor Doors",
+            "LED Matrix Headlights",
+            "Aerodynamic Design"
+        ],
+        safety: [
+            "Carbon Ceramic Brakes",
+            "Traction Control",
+            "Stability Control",
+            "Advanced Driver Assistance"
+        ],
+        comfort: [
+            "Dual-zone Climate Control",
+            "Keyless Entry",
+            "Push Start"
+        ],
+        infotainment: [
+            "Touchscreen Display",
+            "Apple CarPlay",
+            "Premium Audio System",
+            "Bluetooth Connectivity"
+        ],
+    },
+    description: "Rent the Lamborghini Revuelto in Dubai for AED 5000 per day. A cutting-edge V12 hybrid supercar delivering extreme performance and futuristic design. Perfect for luxury experiences, events, and making a statement. Includes 250 km daily limit.",
+},
+
+{
+    id: 125,
+    brand: "Land Rover",
+    name: "Range Rover Vogue 2023",
+    category: "suv",
+    image: vogue2023Img,
+    priceDay: 1550,
+    priceWeek: 9500,
+    priceMonth: 36000,
+    mileageLimit: 300,
+    additionalMileage: 5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 250,
+        hp: 395,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Luxury SUV",
+        make: "Land Rover",
+        model: "Range Rover Vogue",
+        engineCapacity: "3.0L Turbo",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "Black / White / Grey",
+    },
+    features: {
+        interior: [
+            "Premium Leather Seats",
+            "13.1-inch Touchscreen",
+            "Meridian Sound System",
+            "Panoramic Sunroof",
+            "Ambient Lighting"
+        ],
+        exterior: [
+            "21-inch Alloy Wheels",
+            "LED Matrix Headlights",
+            "Flush Door Handles",
+            "Signature Design"
+        ],
+        safety: [
+            "Adaptive Cruise Control",
+            "Lane Keep Assist",
+            "360° Camera",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Air Suspension",
+            "4-zone Climate Control",
+            "Heated & Ventilated Seats",
+            "Wireless Charging"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Wi-Fi Hotspot",
+            "Navigation System"
+        ],
+    },
+    description: "Rent the Range Rover Vogue 2023 in Dubai for AED 1550 per day. A top-tier luxury SUV offering unmatched comfort, advanced technology, and powerful performance. Perfect for VIP travel and premium experiences. Includes 300 km daily limit.",
+},
+
+{
+    id: 126,
+    brand: "Land Rover",
+    name: "Range Rover Vogue 2021",
+    category: "suv",
+    image: vogue2021Img,
+    priceDay: 850,
+    priceWeek: 5200,
+    priceMonth: 20000,
+    mileageLimit: 300,
+    additionalMileage: 4,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 240,
+        hp: 355,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Luxury SUV",
+        make: "Land Rover",
+        model: "Range Rover Vogue",
+        engineCapacity: "3.0L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "Black / White / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "Dual Touchscreens",
+            "Meridian Audio",
+            "Panoramic Sunroof"
+        ],
+        exterior: [
+            "20-inch Alloy Wheels",
+            "LED Lighting",
+            "Power Tailgate",
+            "Classic Design"
+        ],
+        safety: [
+            "Lane Assist",
+            "Blind Spot Monitoring",
+            "360 Camera",
+            "Airbags System"
+        ],
+        comfort: [
+            "Air Suspension",
+            "Dual-zone Climate Control",
+            "Heated Seats",
+            "Keyless Entry"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Navigation"
+        ],
+    },
+    description: "Rent the Range Rover Vogue 2021 in Dubai for AED 850 per day. A luxury SUV combining comfort, performance, and premium features. Ideal for business trips and family travel. Includes 300 km daily limit.",
+},
+
+{
+    id: 127,
+    brand: "Land Rover",
+    name: "Range Rover Sport",
+    category: "suv",
+    image: sportImg,
+    priceDay: 700,
+    priceWeek: 4200,
+    priceMonth: 16000,
+    mileageLimit: 300,
+    additionalMileage: 4,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 230,
+        hp: 355,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Luxury SUV",
+        make: "Land Rover",
+        model: "Range Rover Sport",
+        engineCapacity: "3.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "Black / White / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "Touch Pro Duo",
+            "Sport Steering Wheel",
+            "Ambient Lighting"
+        ],
+        exterior: [
+            "20-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design",
+            "Power Tailgate"
+        ],
+        safety: [
+            "Adaptive Cruise Control",
+            "Lane Keep Assist",
+            "Rear Camera",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Air Suspension",
+            "Dual-zone Climate Control",
+            "Heated Seats",
+            "Keyless Entry"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Navigation"
+        ],
+    },
+    description: "Rent the Range Rover Sport in Dubai for AED 700 per day. A dynamic luxury SUV offering sporty performance with premium comfort. Perfect for city drives and long trips. Includes 300 km daily limit.",
+},
+{
+    id: 128,
+    brand: "Land Rover",
+    name: "Range Rover Defender",
+    category: "suv",
+    image: defenderImg,
+    priceDay: 900,
+    priceWeek: 5500,
+    priceMonth: 21000,
+    mileageLimit: 300,
+    additionalMileage: 4,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 210,
+        hp: 296,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Off-road SUV",
+        make: "Land Rover",
+        model: "Defender",
+        engineCapacity: "2.0L Turbo",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "Green / Black / White",
+    },
+    features: {
+        interior: [
+            "Durable Premium Interior",
+            "Touchscreen Display",
+            "Water-resistant Materials",
+            "Rubberized Flooring"
+        ],
+        exterior: [
+            "All-terrain Tires",
+            "LED Headlights",
+            "Roof Rack",
+            "Spare Wheel Mount"
+        ],
+        safety: [
+            "Terrain Response System",
+            "Hill Descent Control",
+            "360 Camera",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Dual-zone Climate Control",
+            "Keyless Entry",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Navigation System"
+        ],
+    },
+    description: "Rent the Range Rover Defender in Dubai for AED 900 per day. A rugged yet luxurious SUV built for both city driving and off-road adventures. Perfect for explorers who want comfort and capability. Includes 300 km daily limit.",
+},
 
 ]
 
