@@ -24,6 +24,14 @@ import acadiaImg from  "@/assets/cars/fleet/acadiaImg.jpg"
 import accordImg from  "@/assets/cars/fleet/accordImg.jpg" 
 import civicImg from  "@/assets/cars/fleet/civicImg.jpg"
 import odysseyImg from  "@/assets/cars/fleet/odysseyImg.jpg"
+import pacificaImg from "@/assets/cars/fleet/pacificaImg.jpg"
+import mg5Img from "@/assets/cars/fleet/mg5Img.jpg"
+import elantraImg from  "@/assets/cars/fleet/elantraImg.jpg"
+import sonataImg from   "@/assets/cars/fleet/sonataImg.jpg"
+import accentImg from    "@/assets/cars/fleet/accentImg.jpg"
+import tucsonImg from "@/assets/cars/fleet/tucsonImg.jpg"
+import cretaImg from "@/assets/cars/fleet/cretaImg.jpg"
+
 
 export const fleetCars = [
     {
@@ -1729,6 +1737,456 @@ export const fleetCars = [
         ],
     },
     description: "Rent the Honda Odyssey in Dubai for AED 250 per day. A spacious and family-friendly minivan with seating for up to 8 passengers. Perfect for group travel, airport transfers, and long trips. Includes 300 km daily limit for comfortable travel across the UAE.",
+},
+{
+    id: 114,
+    brand: "Chrysler",
+    name: "Chrysler Pacifica",
+    category: "van",
+    image: pacificaImg,
+    priceDay: 250,
+    priceWeek: 1500,
+    priceMonth: 4800,
+    mileageLimit: 300,
+    additionalMileage: 3,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 287,
+        seats: 8,
+    },
+    overview: {
+        bodyType: "Minivan",
+        make: "Chrysler",
+        model: "Pacifica",
+        engineCapacity: "3.6L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "Uconnect Touchscreen System",
+            "Power Sliding Doors",
+            "Tri-zone Climate Control",
+            "Stow 'n Go Seating"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Power Liftgate",
+            "Sliding Doors"
+        ],
+        safety: [
+            "Adaptive Cruise Control",
+            "Blind Spot Monitoring",
+            "Rear Cross Traffic Alert",
+            "360° Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth Connectivity",
+            "Rear Entertainment System"
+        ],
+    },
+    description: "Rent the Chrysler Pacifica in Dubai for AED 250 per day. A premium minivan designed for comfort and family travel, offering seating for up to 8 passengers. Equipped with flexible seating, modern tech, and smooth driving performance. Includes 300 km daily limit, perfect for group trips and long journeys across the UAE.",
+},
+
+
+{
+    id: 115,
+    brand: "MG",
+    name: "MG 5",
+    category: "sedan",
+    image: mg5Img,
+    priceDay: 120,
+    priceWeek: 700,
+    priceMonth: 2200,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 118,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "MG",
+        model: "5",
+        engineCapacity: "1.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "8-inch Touchscreen Display",
+            "Manual Adjustable Seats",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "16-inch Alloy Wheels",
+            "LED Daytime Running Lights",
+            "Chrome Grille",
+            "Power Mirrors"
+        ],
+        safety: [
+            "Rear Camera",
+            "ABS & Airbags",
+            "Electronic Stability Control",
+            "Hill Hold Assist"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth Connectivity",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the MG 5 in Dubai for AED 120 per day. A budget-friendly and fuel-efficient compact sedan, perfect for daily commuting and city driving. Offers comfortable seating for 5 passengers and essential modern features. Includes 300 km daily limit, making it ideal for economical travel across the UAE.",
+},
+
+{
+    id: 116,
+    brand: "Hyundai",
+    name: "Hyundai Creta",
+    category: "suv",
+    image: cretaImg,
+    priceDay: 160,
+    priceWeek: 950,
+    priceMonth: 3000,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 138,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact SUV",
+        make: "Hyundai",
+        model: "Creta",
+        engineCapacity: "1.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Blue",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.25-inch Touchscreen",
+            "Digital Instrument Cluster",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Roof Rails",
+            "Chrome Grille"
+        ],
+        safety: [
+            "Rear Camera",
+            "Lane Assist",
+            "ABS & Airbags",
+            "Hill Assist"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Hyundai Creta in Dubai for AED 160 per day. A stylish compact SUV with modern features and comfortable seating for 5 passengers. Perfect for city drives and weekend trips. Includes 300 km daily limit.",
+},
+{
+    id: 117,
+    brand: "Hyundai",
+    name: "Hyundai Tucson",
+    category: "suv",
+    image: tucsonImg,
+    priceDay: 140,
+    priceWeek: 850,
+    priceMonth: 2700,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 190,
+        hp: 187,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Mid-size SUV",
+        make: "Hyundai",
+        model: "Tucson",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.25-inch Display",
+            "Power Seats",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Lighting",
+            "Roof Rails",
+            "Panoramic Sunroof"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Forward Collision Warning",
+            "Blind Spot Monitoring",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Premium Audio"
+        ],
+    },
+    description: "Rent the Hyundai Tucson in Dubai for AED 140 per day. A versatile SUV with a smooth ride, modern tech, and spacious interior for 5 passengers. Ideal for daily use and long drives. Includes 300 km daily limit.",
+},
+{
+    id: 118,
+    brand: "Hyundai",
+    name: "Hyundai Accent",
+    category: "sedan",
+    image: accentImg,
+    priceDay: 130,
+    priceWeek: 780,
+    priceMonth: 2400,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 170,
+        hp: 120,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Hyundai",
+        model: "Accent",
+        engineCapacity: "1.6L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Silver / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "7-inch Display",
+            "Manual Seats",
+            "Air Conditioning"
+        ],
+        exterior: [
+            "15-inch Wheels",
+            "Halogen Headlights",
+            "Compact Design",
+            "Power Mirrors"
+        ],
+        safety: [
+            "Rear Camera",
+            "ABS & Airbags",
+            "Stability Control",
+            "Parking Sensors"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Bluetooth",
+            "USB Ports",
+            "Basic Audio System"
+        ],
+    },
+    description: "Rent the Hyundai Accent in Dubai for AED 130 per day. A practical and fuel-efficient compact sedan perfect for city driving and daily commuting. Includes 300 km daily limit.",
+},
+{
+    id: 119,
+    brand: "Hyundai",
+    name: "Hyundai Sonata",
+    category: "sedan",
+    image: sonataImg,
+    priceDay: 150,
+    priceWeek: 900,
+    priceMonth: 2800,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 191,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Mid-size Sedan",
+        make: "Hyundai",
+        model: "Sonata",
+        engineCapacity: "2.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "12.3-inch Digital Display",
+            "Power Seats",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Lighting",
+            "Sporty Design",
+            "Chrome Accents"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Adaptive Cruise Control",
+            "Blind Spot Monitoring",
+            "360 Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Premium Audio"
+        ],
+    },
+    description: "Rent the Hyundai Sonata in Dubai for AED 150 per day. A stylish and comfortable sedan offering premium features and smooth performance. Ideal for business and daily driving. Includes 300 km daily limit.",
+},
+{
+    id: 120,
+    brand: "Hyundai",
+    name: "Hyundai Elantra",
+    category: "sedan",
+    image: elantraImg,
+    priceDay: 140,
+    priceWeek: 850,
+    priceMonth: 2600,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 195,
+        hp: 147,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Hyundai",
+        model: "Elantra",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Blue",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.25-inch Display",
+            "Digital Cluster",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design",
+            "Sharp Body Lines"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Forward Collision Warning",
+            "Rear Camera",
+            "Airbags System"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Hyundai Elantra in Dubai for AED 140 per day. A modern and stylish compact sedan with advanced features and comfortable seating for 5 passengers. Perfect for daily and business use. Includes 300 km daily limit.",
 },
 
 
