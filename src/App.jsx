@@ -18,6 +18,7 @@ import AffordableCars from "@/sections/AffordableCars"
 import RecommendedCars from "@/sections/RecommendedCars"
 import CarOfferPage from "@/pages/CarOfferPage"
 import ScrollToTop from "@/components/ScrollToTop"
+import Cars from "@/pages/Cars"
 
 const HomePage = () => {
 
@@ -59,20 +60,40 @@ const HomePage = () => {
 }
 
 
-const App = () => {
+// const App = () => {
 
+//     return (
+//         <AppProvider>
+//             <BrowserRouter>
+//                 <ScrollToTop />
+//                 <Routes>
+//                     <Route path="/" element={<HomePage />} />
+//                     <Route path="/car/:id" element={<CarOfferPage />} />
+//                 </Routes>
+//             </BrowserRouter>
+//         </AppProvider>
+//     )
+
+// }
+
+const App = () => {
     return (
         <AppProvider>
             <BrowserRouter>
                 <ScrollToTop />
+
+                <Navbar /> {/* 👈 MOVE HERE */}
+
                 <Routes>
                     <Route path="/" element={<HomePage />} />
+                    <Route path="/cars" element={<Cars />} />
                     <Route path="/car/:id" element={<CarOfferPage />} />
                 </Routes>
+
+                <Footer /> {/* 👈 MOVE HERE */}
             </BrowserRouter>
         </AppProvider>
     )
-
 }
 
 export default App

@@ -9,7 +9,7 @@ import logoFull from "@/assets/icons/logo.png"
 const navLinks = [
     { label: "Home", href: "#home" },
     { label: "About Us", href: "#about" },
-    { label: "Cars", href: "#categories" },
+    { label: "Cars", href: "/cars" }, // ✅ FIXED
     { label: "Brands", href: "#brands" },
     { label: "Categories", href: "#categories" },
     { label: "Blogs", href: "#blogs" },
@@ -37,6 +37,11 @@ const Navbar = () => {
     const handleNavClick = (href) => {
 
         closeMenu()
+        if (href.startsWith("/")) {
+            navigate(href)
+            return
+        }
+
 
         if (pathname !== "/") {
             navigate("/")
