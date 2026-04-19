@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react" // Added useMemo
 import { Link } from "react-router-dom"
 import { AnimatePresence, motion } from "motion/react"
 import { Gauge, Zap, Users, MessageCircle, Tag } from "lucide-react"
@@ -6,19 +6,17 @@ import { fleetCars } from "@/data/cars"
 import pointerArrow from "@/assets/svg/pointer-bash.svg"
 import BookingModal from "@/components/BookingModal"
 
-
 const cardVariants = {
     hidden: { opacity: 0, y: 40 },
     show: { opacity: 1, y: 0 },
 }
 
 const FleetCard = ({ car, index, onBook }) => {
-
     return (
         <motion.div
             variants={cardVariants}
-            transition={{ duration: 0.6, delay: (index % 3) * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex flex-col bg-brand-card rounded-2xl overflow-hidden"
+            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
+            className="flex flex-col bg-brand-card rounded-2xl overflow-hidden h-full"
         >
             <div className="relative overflow-hidden group/img" style={{ height: "210px" }}>
                 <img
@@ -32,7 +30,7 @@ const FleetCard = ({ car, index, onBook }) => {
                 />
             </div>
 
-            <div className="flex flex-col gap-4 p-5">
+            <div className="flex flex-col gap-4 p-5 flex-grow">
                 <div className="flex flex-col gap-1">
                     <span className="font-heading text-caption font-semibold text-brand-gold tracking-[0.2em] uppercase">
                         {car.brand}
@@ -81,7 +79,7 @@ const FleetCard = ({ car, index, onBook }) => {
                     </div>
                 </div>
 
-                <div className="flex gap-3">
+                <div className="flex gap-3 mt-auto">
                     <button
                         onClick={() => onBook(car)}
                         className="flex-1 flex items-center justify-center gap-2 bg-brand-gold text-brand-dark font-heading font-semibold text-body-sm py-2.5 px-4 rounded-lg hover:bg-brand-gold-dark transition-colors duration-200 cursor-pointer border-none"
@@ -100,13 +98,15 @@ const FleetCard = ({ car, index, onBook }) => {
             </div>
         </motion.div>
     )
-
 }
 
-
 const Fleet = () => {
-
     const [selectedCar, setSelectedCar] = useState(null)
+
+    // FILTER: Shows only cars with priceDay >= 500
+    const premiumCars = useMemo(() => {
+        return fleetCars.filter(car => car.priceDay >= 500)
+    }, [])
 
     return (
         <>
@@ -144,22 +144,22 @@ const Fleet = () => {
                         viewport={{ once: true, margin: "-5% 0px" }}
                         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
                     >
-                        {fleetCars.map((car, index) => (
+                        {premiumCars.map((car, index) => (
                             <FleetCard key={car.id} car={car} index={index} onBook={setSelectedCar} />
                         ))}
                     </motion.div>
-                </div>
 
-                <div className="flex items-center justify-center mt-14">
-                    <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
-                        See More
-                    </button>
+                    <div className="flex items-center justify-center mt-14">
+                        <Link to="/cars" className="no-underline">
+                            <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
+                                See Full Fleet
+                            </button>
+                        </Link>
+                    </div>
                 </div>
-
             </section>
         </>
     )
-
 }
 
 export default Fleet

@@ -1,10 +1,6 @@
-import lamborghiniImg from "@/assets/cars/fleet/lamborghini_aventador.jpg"
-import rollsRoyceImg from "@/assets/cars/fleet/rolls_royce_ghost.jpg"
 import rangeRoverImg from "@/assets/cars/fleet/range_rover_autobiography.jpg"
-import ferrariImg from "@/assets/cars/fleet/ferrari_f8.jpg"
 import bentleyImg from "@/assets/cars/fleet/bentley_continental_gt.jpg"
 import cadillacImg from "@/assets/cars/fleet/cadillac_escalade.jpg"
-
 import LRD from "@/assets/cars/fleet/LRD.jpg"
 import amg from "@/assets/cars/fleet/amg63.jpg"
 import a6 from "@/assets/cars/fleet/audi_a6.jpg"
@@ -39,6 +35,15 @@ import defenderImg from   "@/assets/cars/fleet/defenderImg.jpg"
 import sportImg  from  "@/assets/cars/fleet/sportImg.jpg"
 import vogue2021Img from "@/assets/cars/fleet/vogue2021Img.jpg"
 import vogue2023Img from  "@/assets/cars/fleet/vogue2023Img.jpg"
+import maximaImg from "@/assets/cars/fleet/maximaImg.jpg"
+import versaImg from  "@/assets/cars/fleet/versaImg.jpg"
+import sunnyImg from "@/assets/cars/fleet/sunnyImg.jpg"
+import altimaImg from  "@/assets/cars/fleet/altimaImg.jpg"
+import pathfinderImg from  "@/assets/cars/fleet/pathfinderImg.jpg"
+import patrolImg from  "@/assets/cars/fleet/patrolImg.jpg"
+import sentraImg from "@/assets/cars/fleet/sentraImg.jpg"
+import patrolNismoImg from  "@/assets/cars/fleet/patrolNismoImg.jpg"
+
 
 export const fleetCars = [
     {
@@ -1171,45 +1176,7 @@ export const fleetCars = [
         },
         description: "Rent the Range Rover Autobiography in Dubai for AED 1800 per day. Perfect for families and groups seeking luxury combined with off-road capability. Comprehensive insurance included with a standard mileage of 250 km per day. Security deposit AED 5000. Fits up to 7 passengers comfortably.",
     },
-    {
-        id: 104,
-        brand: "Ferrari",
-        name: "Ferrari F8 Tributo",
-        category: "sport",
-        image: ferrariImg,
-        priceDay: 3200,
-        priceWeek: 20000,
-        priceMonth: 62000,
-        mileageLimit: 200,
-        additionalMileage: 6,
-        minRental: 2,
-        location: "Business Bay, Dubai",
-        specs: {
-            speed: 340,
-            hp: 710,
-            seats: 2,
-        },
-        overview: {
-            bodyType: "Coupe",
-            make: "Ferrari",
-            model: "F8 Tributo",
-            engineCapacity: "3.9L V8",
-            doors: 2,
-            fuelType: "Petrol",
-            tollCharges: "AED 4",
-            gearbox: "Auto",
-            bagsCapacity: 2,
-            color: "Rosso Corsa / Nero",
-        },
-        features: {
-            interior: ["Rosso Ferrari Leather", "Carbon Fibre Racing Seats", "Manettino Dial", "Digital Instrument Cluster", "Alcantara Headliner", "LED Interior Lighting"],
-            exterior: ["20-inch Diamond Alloys", "Aerodynamic Side Skirts", "Carbon Fibre Rear Diffuser", "Retractable Rear Spoiler"],
-            safety: ["Ferrari Side Slip Control", "Electronic Stability Control", "Carbon Ceramic Brakes", "Reversing Camera"],
-            comfort: ["Electric Seat Adjustment", "Dual-zone Climate Control", "Keyless Entry", "Electric Windows"],
-            infotainment: ["Ferrari 7-inch Display", "Apple CarPlay", "JBL Sound System", "Wireless Charging"],
-        },
-        description: "Drive the Ferrari F8 Tributo in Dubai, the most powerful V8 Ferrari road car ever. Available for AED 3200 per day. Comprehensive insurance included with 200 km daily limit. Security deposit AED 8000. This is a pure driving machine that delivers an unforgettable experience on Dubai roads.",
-    },
+ 
     {
         id: 105,
         brand: "Bentley",
@@ -2708,6 +2675,494 @@ export const fleetCars = [
     description: "Rent the Range Rover Defender in Dubai for AED 900 per day. A rugged yet luxurious SUV built for both city driving and off-road adventures. Perfect for explorers who want comfort and capability. Includes 300 km daily limit.",
 },
 
+{
+    id: 129,
+    brand: "Nissan",
+    name: "Nissan Patrol",
+    category: "suv",
+    image: patrolImg,
+    priceDay: 500,
+    priceWeek: 3000,
+    priceMonth: 9500,
+    mileageLimit: 300,
+    additionalMileage: 3,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 210,
+        hp: 400,
+        seats: 8,
+    },
+    overview: {
+        bodyType: "Full-size SUV",
+        make: "Nissan",
+        model: "Patrol",
+        engineCapacity: "5.6L V8",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "12.3-inch Display",
+            "Wood Trim",
+            "Tri-zone Climate Control"
+        ],
+        exterior: [
+            "20-inch Alloy Wheels",
+            "LED Headlights",
+            "Chrome Grille",
+            "Roof Rails"
+        ],
+        safety: [
+            "360 Camera",
+            "Lane Assist",
+            "Emergency Braking",
+            "Blind Spot Monitoring"
+        ],
+        comfort: [
+            "Cruise Control",
+            "Keyless Entry",
+            "Push Start",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Premium Audio"
+        ],
+    },
+    description: "Rent the Nissan Patrol in Dubai for AED 500 per day. A powerful and spacious SUV perfect for family trips and off-road adventures. Includes 300 km daily limit.",
+},
+{
+    id: 130,
+    brand: "Nissan",
+    name: "Nissan Pathfinder",
+    category: "suv",
+    image: pathfinderImg,
+    priceDay: 180,
+    priceWeek: 1100,
+    priceMonth: 3500,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 190,
+        hp: 284,
+        seats: 7,
+    },
+    overview: {
+        bodyType: "Mid-size SUV",
+        make: "Nissan",
+        model: "Pathfinder",
+        engineCapacity: "3.5L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "9-inch Touchscreen",
+            "Power Seats",
+            "Tri-zone Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Lighting",
+            "Roof Rails",
+            "Power Tailgate"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Rear Camera",
+            "Blind Spot Monitoring",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Nissan Pathfinder in Dubai for AED 180 per day. A versatile family SUV with comfortable seating for 7 passengers and modern features. Includes 300 km daily limit.",
+},
+{
+    id: 131,
+    brand: "Nissan",
+    name: "Nissan Altima",
+    category: "sedan",
+    image: altimaImg,
+    priceDay: 150,
+    priceWeek: 900,
+    priceMonth: 2800,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 188,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Mid-size Sedan",
+        make: "Nissan",
+        model: "Altima",
+        engineCapacity: "2.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric/Leather Seats",
+            "8-inch Display",
+            "Power Seats",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design"
+        ],
+        safety: [
+            "Lane Assist",
+            "Forward Collision Warning",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth"
+        ],
+    },
+    description: "Rent the Nissan Altima in Dubai for AED 150 per day. A comfortable and stylish sedan perfect for daily and business travel. Includes 300 km daily limit.",
+},
+{
+    id: 132,
+    brand: "Nissan",
+    name: "Nissan Sunny",
+    category: "sedan",
+    image: sunnyImg,
+    priceDay: 85,
+    priceWeek: 500,
+    priceMonth: 1500,
+    mileageLimit: 300,
+    additionalMileage: 1.5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 170,
+        hp: 118,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Nissan",
+        model: "Sunny",
+        engineCapacity: "1.5L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Silver",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "Basic Display",
+            "Manual Seats",
+            "Air Conditioning"
+        ],
+        exterior: [
+            "15-inch Wheels",
+            "Halogen Headlights",
+            "Compact Design"
+        ],
+        safety: [
+            "ABS & Airbags",
+            "Rear Sensors"
+        ],
+        comfort: [
+            "Keyless Entry"
+        ],
+        infotainment: [
+            "Bluetooth",
+            "USB"
+        ],
+    },
+    description: "Rent the Nissan Sunny in Dubai for AED 85 per day. A budget-friendly sedan ideal for city commuting and economical travel. Includes 300 km daily limit.",
+},
+{
+    id: 133,
+    brand: "Nissan",
+    name: "Nissan Versa",
+    category: "sedan",
+    image: versaImg,
+    priceDay: 90,
+    priceWeek: 550,
+    priceMonth: 1700,
+    mileageLimit: 300,
+    additionalMileage: 1.5,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 170,
+        hp: 122,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Nissan",
+        model: "Versa",
+        engineCapacity: "1.6L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "7-inch Display",
+            "Manual Seats"
+        ],
+        exterior: [
+            "15-inch Wheels",
+            "LED DRL",
+            "Compact Design"
+        ],
+        safety: [
+            "Rear Camera",
+            "ABS & Airbags"
+        ],
+        comfort: [
+            "Keyless Entry"
+        ],
+        infotainment: [
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Nissan Versa in Dubai for AED 90 per day. A compact and efficient sedan ideal for daily use and budget travel. Includes 300 km daily limit.",
+},
+{
+    id: 134,
+    brand: "Nissan",
+    name: "Nissan Maxima",
+    category: "sedan",
+    image: maximaImg,
+    priceDay: 180,
+    priceWeek: 1100,
+    priceMonth: 3500,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 220,
+        hp: 300,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Full-size Sedan",
+        make: "Nissan",
+        model: "Maxima",
+        engineCapacity: "3.5L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "Black / White / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "8-inch Display",
+            "Bose Audio",
+            "Power Seats"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design"
+        ],
+        safety: [
+            "Lane Assist",
+            "Blind Spot Monitoring",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth"
+        ],
+    },
+    description: "Rent the Nissan Maxima in Dubai for AED 180 per day. A premium sporty sedan offering powerful performance and comfort. Includes 300 km daily limit.",
+},
+{
+    id: 135,
+    brand: "Nissan",
+    name: "Nissan Sentra",
+    category: "sedan",
+    image: sentraImg,
+    priceDay: 140,
+    priceWeek: 850,
+    priceMonth: 2600,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 190,
+        hp: 149,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Nissan",
+        model: "Sentra",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Premium Fabric/Leather Seats",
+            "8-inch Touchscreen",
+            "Dual-zone Climate Control",
+            "Digital Display"
+        ],
+        exterior: [
+            "17-inch Alloy Wheels",
+            "LED Headlights",
+            "Sporty Design"
+        ],
+        safety: [
+            "Lane Departure Warning",
+            "Blind Spot Monitoring",
+            "Rear Camera",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Nissan Sentra in Dubai for AED 140 per day. A modern and comfortable compact sedan ideal for daily commuting and business use. Includes 300 km daily limit.",
+},
+{
+    id: 136,
+    brand: "Nissan",
+    name: "Nissan Patrol Nismo",
+    category: "suv",
+    image: patrolNismoImg,
+    priceDay: 600,
+    priceWeek: 3600,
+    priceMonth: 11000,
+    mileageLimit: 300,
+    additionalMileage: 4,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 220,
+        hp: 428,
+        seats: 8,
+    },
+    overview: {
+        bodyType: "Performance SUV",
+        make: "Nissan",
+        model: "Patrol Nismo",
+        engineCapacity: "5.6L V8",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "White / Black / Red Accents",
+    },
+    features: {
+        interior: [
+            "Nismo Sport Leather Seats",
+            "Red Stitching Interior",
+            "Premium Audio System",
+            "Tri-zone Climate Control"
+        ],
+        exterior: [
+            "22-inch Alloy Wheels",
+            "Nismo Body Kit",
+            "LED Headlights",
+            "Sport Exhaust Design"
+        ],
+        safety: [
+            "360 Camera",
+            "Lane Assist",
+            "Blind Spot Monitoring",
+            "Emergency Braking"
+        ],
+        comfort: [
+            "Cruise Control",
+            "Keyless Entry",
+            "Push Start",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Navigation System"
+        ],
+    },
+    description: "Rent the Nissan Patrol Nismo in Dubai for AED 600 per day. A high-performance version of the iconic Patrol with sporty design and enhanced power. Perfect for luxury and performance enthusiasts. Includes 300 km daily limit.",
+},
+
+
 ]
 
 export const faqItems = [
@@ -2732,3 +3187,4 @@ export const faqItems = [
         answer: "Yes, inter-emirate driving within the UAE is permitted on all our vehicles at no extra charge. One-way rentals between emirates are available, subject to a drop-off fee. International travel outside the UAE is not permitted.",
     },
 ]
+

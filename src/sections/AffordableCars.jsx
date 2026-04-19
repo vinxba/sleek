@@ -1,4 +1,4 @@
-import { useState } from "react"
+import { useState, useMemo } from "react" // Added useMemo for performance
 import { Link } from "react-router-dom"
 import { AnimatePresence, motion } from "motion/react"
 import { Gauge, Zap, Users, MessageCircle, Tag } from "lucide-react"
@@ -12,8 +12,7 @@ const cardVariants = {
 }
 
 const AffordableCard = ({ car, onBook }) => (
-
-    <div className="flex flex-col bg-brand-card rounded-2xl overflow-hidden">
+    <div className="flex flex-col bg-brand-card rounded-2xl overflow-hidden h-full">
         <div className="relative overflow-hidden group/img" style={{ height: "175px" }}>
             <img
                 src={car.image}
@@ -26,7 +25,7 @@ const AffordableCard = ({ car, onBook }) => (
             />
         </div>
 
-        <div className="flex flex-col gap-3 p-4">
+        <div className="flex flex-col gap-3 p-4 flex-grow">
             <div className="flex flex-col items-center gap-0.5 text-center">
                 <span className="font-heading text-caption font-semibold text-brand-gold tracking-[0.2em] uppercase">
                     {car.brand}
@@ -57,7 +56,7 @@ const AffordableCard = ({ car, onBook }) => (
                 </div>
             </div>
 
-            <div className="flex items-center gap-3">
+            <div className="flex items-center justify-center gap-3">
                 <div className="flex items-baseline gap-1">
                     <span className="font-body text-caption text-brand-gray">AED</span>
                     <span className="font-heading font-bold text-brand-gold text-body">{car.priceDay.toLocaleString()}</span>
@@ -71,7 +70,7 @@ const AffordableCard = ({ car, onBook }) => (
                 </div>
             </div>
 
-            <div className="flex gap-2">
+            <div className="flex gap-2 mt-auto">
                 <button
                     onClick={() => onBook(car)}
                     className="flex-1 flex items-center justify-center gap-1.5 bg-brand-card-hover border border-brand-border text-brand-white font-heading font-semibold text-caption py-2 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer"
@@ -89,13 +88,15 @@ const AffordableCard = ({ car, onBook }) => (
             </div>
         </div>
     </div>
-
 )
 
-
 const AffordableCars = () => {
-
     const [selectedCar, setSelectedCar] = useState(null)
+
+    // Filter cars where priceDay is below 500
+    const filteredCars = useMemo(() => {
+        return fleetCars.filter(car => car.priceDay < 500)
+    }, [])
 
     return (
         <>
@@ -109,20 +110,23 @@ const AffordableCars = () => {
                 <div className="container-custom">
                     <div className="flex flex-col items-center gap-3 mb-12">
                         <span className="font-heading font-semibold text-brand-gray text-caption tracking-[0.3em] uppercase">
-                            Affordable Cars
+                            Budget Friendly
                         </span>
                         <div className="flex items-center gap-4">
                             <img
                                 src={pointerArrow}
                                 alt=""
-                                className="shrink-0"
+                                className="shrink-0 hidden md:block"
                                 style={{ transform: "scaleX(-1)" }}
                             />
                             <h2 className="font-heading font-bold text-brand-gold text-heading-md md:text-heading-xl leading-tight text-center">
                                 Affordable Car Rental Dubai
                             </h2>
-                            <img src={pointerArrow} alt="" className="shrink-0" />
+                            <img src={pointerArrow} alt="" className="shrink-0 hidden md:block" />
                         </div>
+                        <p className="font-body text-brand-gray text-body-sm text-center">
+                            Luxury experiences don't always need a luxury price tag.
+                        </p>
                     </div>
 
                     <motion.div
@@ -132,27 +136,29 @@ const AffordableCars = () => {
                         viewport={{ once: true, margin: "-5% 0px" }}
                         variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
                     >
-                        {fleetCars.map((car, index) => (
+                        {filteredCars.map((car, index) => (
                             <motion.div
                                 key={car.id}
                                 variants={cardVariants}
-                                transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+                                transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
                             >
                                 <AffordableCard car={car} onBook={setSelectedCar} />
                             </motion.div>
                         ))}
                     </motion.div>
 
+                    {/* Only show "See More" if there are cars to show, or link it to your fleet page */}
                     <div className="flex items-center justify-center mt-12">
-                        <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
-                            See More
-                        </button>
+                        <Link to="/cars" className="no-underline">
+                            <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
+                                View Full Fleet
+                            </button>
+                        </Link>
                     </div>
                 </div>
             </section>
         </>
     )
-
 }
 
 export default AffordableCars
