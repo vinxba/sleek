@@ -19,9 +19,11 @@ import BMW3 from "@/assets/cars/fleet/bmw_3series.jpg"
 import BMW2 from "@/assets/cars/fleet/bmw_2series.jpg" 
 import tahoeImg from "@/assets/cars/fleet/tahoeImg.jpg" 
 import malibuImg from "@/assets/cars/fleet/malibuImg.jpg" 
-
-
-
+import yukonImg from "@/assets/cars/fleet/yukonImg.jpg" 
+import acadiaImg from  "@/assets/cars/fleet/acadiaImg.jpg" 
+import accordImg from  "@/assets/cars/fleet/accordImg.jpg" 
+import civicImg from  "@/assets/cars/fleet/civicImg.jpg"
+import odysseyImg from  "@/assets/cars/fleet/odysseyImg.jpg"
 
 export const fleetCars = [
     {
@@ -1402,6 +1404,333 @@ export const fleetCars = [
     },
     description: "Rent the Chevrolet Malibu in Dubai for AED 120 per day. A stylish and fuel-efficient midsize sedan, perfect for daily commuting and comfortable city driving. Offers smooth handling, modern features, and seating for up to 5 passengers. Includes 300 km daily limit, making it ideal for both short trips and extended rentals across the UAE.",
 },
+{
+    id: 109,
+    brand: "GMC",
+    name: "GMC Yukon Denali",
+    category: "suv",
+    image: yukonImg,
+    priceDay: 500,
+    priceWeek: 3000,
+    priceMonth: 9500,
+    mileageLimit: 300,
+    additionalMileage: 4,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 210,
+        hp: 420,
+        seats: 7,
+    },
+    overview: {
+        bodyType: "Full-size Luxury SUV",
+        make: "GMC",
+        model: "Yukon Denali",
+        engineCapacity: "6.2L V8",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "Black / White / Metallic Grey",
+    },
+    features: {
+        interior: [
+            "Premium Leather Seats",
+            "14-inch Infotainment Display",
+            "Heads-Up Display",
+            "Panoramic Sunroof",
+            "Heated & Ventilated Seats",
+            "Rear Entertainment Screens"
+        ],
+        exterior: [
+            "22-inch Alloy Wheels",
+            "Chrome Denali Grille",
+            "LED Headlights & Tail Lamps",
+            "Power Running Boards"
+        ],
+        safety: [
+            "Adaptive Cruise Control",
+            "Lane Keep Assist",
+            "Automatic Emergency Braking",
+            "360° Surround Camera"
+        ],
+        comfort: [
+            "Magnetic Ride Control",
+            "Tri-zone Climate Control",
+            "Power Fold Third Row",
+            "Wireless Charging"
+        ],
+        infotainment: [
+            "Bose Premium Sound System",
+            "Apple CarPlay",
+            "Android Auto",
+            "Wi-Fi Hotspot"
+        ],
+    },
+    description: "Rent the GMC Yukon Denali in Dubai for AED 500 per day. A premium full-size SUV offering powerful performance and luxury comfort. Ideal for families and executive travel with seating for up to 7 passengers. Includes 300 km daily limit, perfect for both city and long-distance drives across the UAE.",
+},
+
+{
+    id: 110,
+    brand: "GMC",
+    name: "GMC Acadia",
+    category: "suv",
+    image: acadiaImg,
+    priceDay: 250,
+    priceWeek: 1500,
+    priceMonth: 4800,
+    mileageLimit: 300,
+    additionalMileage: 3,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 195,
+        hp: 310,
+        seats: 7,
+    },
+    overview: {
+        bodyType: "Mid-size SUV",
+        make: "GMC",
+        model: "Acadia",
+        engineCapacity: "3.6L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 4,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Leather Appointed Seats",
+            "8-inch Touchscreen Display",
+            "Power Adjustable Front Seats",
+            "Tri-zone Climate Control",
+            "Fold-flat Third Row"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Roof Rails",
+            "Power Liftgate"
+        ],
+        safety: [
+            "Rear Vision Camera",
+            "Lane Change Alert",
+            "Forward Collision Alert",
+            "Rear Cross Traffic Alert"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Button Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth Connectivity",
+            "USB Charging Ports"
+        ],
+    },
+    description: "Rent the GMC Acadia in Dubai for AED 250 per day. A versatile mid-size SUV offering a balance of performance, comfort, and space for up to 7 passengers. Ideal for family trips and everyday driving with modern features and smooth handling. Includes 300 km daily limit, perfect for both city and highway travel across the UAE.",
+},
+
+{
+    id: 111,
+    brand: "Honda",
+    name: "Honda Accord",
+    category: "sedan",
+    image: accordImg,
+    priceDay: 140,
+    priceWeek: 850,
+    priceMonth: 2600,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 200,
+        hp: 192,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Sedan",
+        make: "Honda",
+        model: "Accord",
+        engineCapacity: "1.5L Turbo",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 3,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Leather Seats",
+            "10.2-inch Digital Display",
+            "Power Driver Seat",
+            "Dual-zone Climate Control"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Chrome Accents",
+            "Power Mirrors"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Adaptive Cruise Control",
+            "Collision Mitigation Braking",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Honda Accord in Dubai for AED 140 per day. A premium sedan offering a smooth ride, modern technology, and spacious comfort for up to 5 passengers. Ideal for business trips and daily commuting. Includes 300 km daily limit for flexible travel across the UAE.",
+},
+{
+    id: 112,
+    brand: "Honda",
+    name: "Honda Civic",
+    category: "sedan",
+    image: civicImg,
+    priceDay: 130,
+    priceWeek: 780,
+    priceMonth: 2400,
+    mileageLimit: 300,
+    additionalMileage: 2,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 190,
+        hp: 158,
+        seats: 5,
+    },
+    overview: {
+        bodyType: "Compact Sedan",
+        make: "Honda",
+        model: "Civic",
+        engineCapacity: "2.0L",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 2,
+        color: "White / Black / Grey",
+    },
+    features: {
+        interior: [
+            "Fabric Seats",
+            "7-inch Display",
+            "Manual Adjustable Seats",
+            "Automatic Climate Control"
+        ],
+        exterior: [
+            "16-inch Alloy Wheels",
+            "LED Daytime Running Lights",
+            "Sporty Design",
+            "Power Mirrors"
+        ],
+        safety: [
+            "Rear Camera",
+            "Lane Assist",
+            "ABS & Airbags",
+            "Stability Control"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "USB Ports"
+        ],
+    },
+    description: "Rent the Honda Civic in Dubai for AED 130 per day. A reliable and fuel-efficient compact sedan perfect for city driving and daily use. Offers comfortable seating for 5 passengers and modern features. Includes 300 km daily limit.",
+},
+{
+    id: 113,
+    brand: "Honda",
+    name: "Honda Odyssey",
+    category: "van",
+    image: odysseyImg,
+    priceDay: 250,
+    priceWeek: 1500,
+    priceMonth: 4800,
+    mileageLimit: 300,
+    additionalMileage: 3,
+    minRental: 1,
+    location: "Deira, Dubai",
+    specs: {
+        speed: 180,
+        hp: 280,
+        seats: 8,
+    },
+    overview: {
+        bodyType: "Minivan",
+        make: "Honda",
+        model: "Odyssey",
+        engineCapacity: "3.5L V6",
+        doors: 4,
+        fuelType: "Petrol",
+        tollCharges: "AED 4",
+        gearbox: "Auto",
+        bagsCapacity: 5,
+        color: "White / Black / Silver",
+    },
+    features: {
+        interior: [
+            "Premium Leather Seats",
+            "Rear Entertainment System",
+            "Power Sliding Doors",
+            "Tri-zone Climate Control",
+            "Flexible Seating Arrangement"
+        ],
+        exterior: [
+            "18-inch Alloy Wheels",
+            "LED Headlights",
+            "Power Tailgate",
+            "Sliding Doors"
+        ],
+        safety: [
+            "Lane Keep Assist",
+            "Adaptive Cruise Control",
+            "Collision Mitigation",
+            "Rear Camera"
+        ],
+        comfort: [
+            "Keyless Entry",
+            "Push Start",
+            "Cruise Control",
+            "Rear AC Vents"
+        ],
+        infotainment: [
+            "Apple CarPlay",
+            "Android Auto",
+            "Bluetooth",
+            "Premium Audio System"
+        ],
+    },
+    description: "Rent the Honda Odyssey in Dubai for AED 250 per day. A spacious and family-friendly minivan with seating for up to 8 passengers. Perfect for group travel, airport transfers, and long trips. Includes 300 km daily limit for comfortable travel across the UAE.",
+},
+
 
 ]
 
