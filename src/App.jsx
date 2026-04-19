@@ -4,24 +4,23 @@ import { AnimatePresence, motion } from "motion/react"
 import { AppProvider } from "@/context/AppContext"
 import PageLoader from "@/components/PageLoader"
 import Navbar from "@/components/Navbar"
+import Footer from "@/components/Footer"
 import Hero from "@/sections/Hero"
 import Categories from "@/sections/Categories"
 import RentalProcess from "@/sections/RentalProcess"
 import Blog from "@/sections/Blog"
 import FAQ from "@/sections/FAQ"
 import Testimonials from "@/sections/Testimonials"
-
 import AboutUs from "@/sections/AboutUs"
 import Brands from "@/sections/Brands"
-import Footer from "@/components/Footer"
 import AffordableCars from "@/sections/AffordableCars"
 import RecommendedCars from "@/sections/RecommendedCars"
 import CarOfferPage from "@/pages/CarOfferPage"
 import ScrollToTop from "@/components/ScrollToTop"
 import Cars from "@/pages/Cars"
 import WhatsAppButton from "@/components/WhatsAppButton"
-const HomePage = () => {
 
+const HomePage = () => {
     const [isLoading, setIsLoading] = useState(true)
 
     const handleLoaderComplete = useCallback(() => {
@@ -39,7 +38,9 @@ const HomePage = () => {
                 animate={{ opacity: isLoading ? 0 : 1 }}
                 transition={{ duration: 0.6, ease: "easeOut" }}
             >
-                <Navbar />
+                {/* IMPORTANT: Navbar and Footer are REMOVED from here 
+                   because they are now global in the App component below.
+                */}
                 <main>
                     <Hero />
                     <AboutUs />
@@ -52,34 +53,18 @@ const HomePage = () => {
                     <Blog />
                     <FAQ />
                 </main>
-                <Footer />
             </motion.div>
         </>
     )
-
 }
 
-
-// const App = () => {
-
-//     return (
-//         <AppProvider>
-//             <BrowserRouter>
-//                 <ScrollToTop />
-//                 <Routes>
-//                     <Route path="/" element={<HomePage />} />
-//                     <Route path="/car/:id" element={<CarOfferPage />} />
-//                 </Routes>
-//             </BrowserRouter>
-//         </AppProvider>
-//     )
-
-// }
 const App = () => {
     return (
         <AppProvider>
             <BrowserRouter>
                 <ScrollToTop />
+                
+                {/* 1. Global Navbar: Shows on every page */}
                 <Navbar /> 
 
                 <Routes>
@@ -88,10 +73,12 @@ const App = () => {
                     <Route path="/car/:id" element={<CarOfferPage />} />
                 </Routes>
 
-                {/* PLACE IT HERE - OUTSIDE THE ROUTES */}
+                {/* 2. Global WhatsApp Button */}
                 <WhatsAppButton /> 
-                
+
+                {/* 3. Global Footer: Shows on every page without repeating */}
                 <Footer />
+                
             </BrowserRouter>
         </AppProvider>
     )
