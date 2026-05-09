@@ -33,7 +33,7 @@ const HomePage = () => {
 
     return (
         <>
-            <AnimatePresence>
+            <AnimatePresence mode="wait">
                 {isLoading && (
                     <PageLoader onComplete={handleLoaderComplete} />
                 )}
@@ -42,7 +42,7 @@ const HomePage = () => {
             <motion.div
                 initial={{ opacity: 0 }}
                 animate={{ opacity: isLoading ? 0 : 1 }}
-                transition={{ duration: 0.6, ease: "easeOut" }}
+                transition={{ duration: 0.8, ease: "easeOut" }}
             >
                 <main>
                     <Hero />
@@ -56,6 +56,9 @@ const HomePage = () => {
                     <Blog />
                     <FAQ />
                 </main>
+
+                {/* WhatsApp Button only mounts when loading is finished */}
+                {!isLoading && <WhatsAppButton />}
             </motion.div>
         </>
     )
@@ -64,10 +67,8 @@ const HomePage = () => {
 const App = () => {
     return (
         <AppProvider>
-
-            {/* IMPORTANT: basename must match your GitHub repo name */}
+            {/* IMPORTANT: basename matches your GitHub repo name */}
             <BrowserRouter basename="/sleek/">
-
                 <ScrollToTop />
 
                 {/* Global Navbar */}
@@ -79,14 +80,9 @@ const App = () => {
                     <Route path="/car/:id" element={<CarOfferPage />} />
                 </Routes>
 
-                {/* Global WhatsApp Button */}
-                <WhatsAppButton />
-
                 {/* Global Footer */}
                 <Footer />
-
             </BrowserRouter>
-
         </AppProvider>
     )
 }
