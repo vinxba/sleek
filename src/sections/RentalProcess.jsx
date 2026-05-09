@@ -1,111 +1,122 @@
 import { motion } from "motion/react"
-import { Car, KeyRound } from "lucide-react"
-import pointerArrow from "@/assets/svg/pointer-bash.svg"
+import { 
+    Calendar, 
+    MapPin, 
+    CreditCard, 
+    LayoutDashboard, 
+    LineChart, 
+    UserCheck, 
+    FileText, 
+    Headphones 
+} from "lucide-react"
 
-const steps = [
+const ecosystemFeatures = [
     {
-        number: "1",
-        title: "Choose A Car",
-        description: "View our range of cars, find your perfect car for the coming days.",
+        icon: Calendar,
+        title: "Online Booking",
+        description: "Instant reservation through our high-performance web and mobile portal.",
     },
     {
-        number: "2",
-        title: "Come In Contact",
-        description: "Our advisor team is ready to help you with the booking process or any questions.",
+        icon: MapPin,
+        title: "Live Vehicle Tracking",
+        description: "GPS-integrated real-time telemetry for every asset in your fleet.",
     },
     {
-        number: "3",
-        title: "Enjoy Driving",
-        description: "Receive the key and enjoy your car. We treat all our cars with respect.",
+        icon: CreditCard,
+        title: "Digital Payments",
+        description: "Secure, encrypted transactional flows for frictionless billing cycles.",
+    },
+    {
+        icon: LayoutDashboard,
+        title: "Mobile Dashboard",
+        description: "Full fleet control in the palm of your hand via the SLEEK native app.",
+    },
+    {
+        icon: LineChart,
+        title: "Fleet Monitoring",
+        description: "Advanced diagnostics and preventative maintenance scheduling.",
+    },
+    {
+        icon: UserCheck,
+        title: "Driver Management",
+        description: "Performance metrics and safety compliance tracking for operators.",
+    },
+    {
+        icon: FileText,
+        title: "Automated Billing",
+        description: "Seamless ERP integration for complex corporate accounting.",
+    },
+    {
+        icon: Headphones,
+        title: "24/7 Customer Support",
+        description: "Priority concierge assistance for mission-critical mobility.",
     },
 ]
 
-const connectorIcons = [Car, KeyRound]
-
 const RentalProcess = () => {
-
     return (
-        <section id="process" className="section-padding bg-brand-dark">
-            <div className="container-custom flex flex-col gap-12">
-
-                <div className="flex flex-col items-center gap-3">
-                    <span className="font-heading font-semibold text-brand-gray text-caption tracking-[0.3em] uppercase">
-                        Steps
+        <section id="process" className="py-24 bg-black">
+            <div className="container-custom">
+                
+                {/* Header Section */}
+                <div className="flex flex-col gap-4 mb-16">
+                    <span className="text-white/40 text-[12px] font-black tracking-[0.4em] uppercase">
+                        02 / TECHNOLOGY
                     </span>
-                    <div className="flex items-center gap-4">
-                        <img
-                            src={pointerArrow}
-                            alt=""
-                            className="shrink-0"
-                            style={{ transform: "scaleX(-1)" }}
-                        />
-                        <h2 className="font-heading font-black text-brand-gold text-heading-md md:text-[2.6rem] tracking-wide text-center">
-                            Car Rental Process
-                        </h2>
-                        <img src={pointerArrow} alt="" className="shrink-0" />
-                    </div>
+                    <h2 className="text-white text-4xl md:text-5xl font-black tracking-tighter uppercase leading-none">
+                        Smart Ecosystem
+                    </h2>
+                    <p className="text-white/60 text-lg max-w-2xl font-light leading-relaxed">
+                        A centralized digital command center for all your mobility operations, 
+                        engineered for real-time efficiency.
+                    </p>
                 </div>
 
-                <div className="flex flex-col md:flex-row items-stretch gap-0">
-                    {steps.map((step, index) => (
-                        <div key={step.number} className="flex flex-col md:flex-row items-center flex-1 min-w-0">
+                {/* Ecosystem Grid */}
+                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 border-l border-t border-white/10">
+                    {ecosystemFeatures.map((feature, index) => (
+                        <motion.div
+                            key={index}
+                            initial={{ opacity: 0 }}
+                            whileInView={{ opacity: 1 }}
+                            viewport={{ once: true }}
+                            transition={{ duration: 0.8, delay: index * 0.05 }}
+                            className="group p-10 border-r border-b border-white/10 hover:bg-white/[0.02] transition-colors flex flex-col gap-6"
+                        >
+                            {/* Icon */}
+                            <div className="text-white">
+                                <feature.icon size={28} strokeWidth={1.5} />
+                            </div>
 
-                            <motion.div
-                                className="flex flex-col gap-4 p-6 bg-brand-card rounded-2xl w-full"
-                                initial={{ opacity: 0, y: 40 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true, margin: "-5% 0px" }}
-                                transition={{ duration: 0.6, delay: index * 0.15, ease: [0.25, 0.1, 0.25, 1] }}
-                            >
-                                <div className="w-10 h-10 rounded-full bg-brand-darker border border-brand-border flex items-center justify-center">
-                                    <span className="font-heading font-bold text-brand-white text-body">
-                                        {step.number}
-                                    </span>
-                                </div>
-                                <div className="flex flex-col gap-2">
-                                    <h3 className="font-heading font-bold text-brand-white text-heading-sm">
-                                        {step.title}
-                                    </h3>
-                                    <p className="font-body text-body-sm text-brand-gray leading-relaxed">
-                                        {step.description}
-                                    </p>
-                                </div>
-                            </motion.div>
-
-                            {index < steps.length - 1 && (() => {
-
-                                const ConnectorIcon = connectorIcons[index]
-
-                                return (
-                                    <div className="flex md:flex-col items-center gap-0 shrink-0 py-4 md:py-0 md:px-2">
-                                        <div className="w-12 h-px md:w-px md:h-8 bg-brand-border" />
-                                        <div className="w-9 h-9 rounded-full border border-brand-border bg-brand-card flex items-center justify-center shrink-0">
-                                            <ConnectorIcon size={15} className="text-brand-gray" />
-                                        </div>
-                                        <div className="w-12 h-px md:w-px md:h-8 bg-brand-border" />
-                                    </div>
-                                )
-
-                            })()}
-
-                        </div>
+                            {/* Content */}
+                            <div className="flex flex-col gap-3">
+                                <h3 className="text-white font-black text-[14px] tracking-widest uppercase">
+                                    {feature.title}
+                                </h3>
+                                <p className="text-white/40 text-[13px] leading-relaxed font-medium">
+                                    {feature.description}
+                                </p>
+                            </div>
+                        </motion.div>
                     ))}
                 </div>
 
-                <motion.p
-                    className="font-body text-body-sm text-brand-gray leading-relaxed text-center max-w-4xl mx-auto"
+                {/* Bottom Detail Text */}
+                <motion.div 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, margin: "-5% 0px" }}
-                    transition={{ duration: 0.7, delay: 0.3, ease: [0.25, 0.1, 0.25, 1] }}
+                    viewport={{ once: true }}
+                    className="mt-20 pt-10 border-t border-white/5"
                 >
-                    The car rental process begins with browsing and selecting a suitable vehicle based on budget, preference, and availability. The customer then provides necessary documents such as a valid driving license, ID proof, and security deposit. Once the details are verified, the rental terms and conditions are explained, and the agreement is signed. Payment is completed based on the chosen rental plan, whether daily, weekly, or monthly. The customer receives the vehicle in good condition with fuel and safety checks completed. During the rental period, the customer is responsible for the vehicle's care and adherence to traffic rules. At the end of the rental period, the car is returned and inspected for any damages or additional charges before the final settlement.
-                </motion.p>
-
+                    <p className="text-white/20 text-[11px] uppercase tracking-[0.2em] leading-loose text-center max-w-5xl mx-auto">
+                        The car rental process begins with browsing and selecting a suitable vehicle based on budget, preference, and availability. 
+                        Once details are verified, the rental terms and conditions are explained, and the agreement is signed. 
+                        Payment is completed based on the chosen rental plan. The customer receives the vehicle in good condition with safety checks completed.
+                    </p>
+                </motion.div>
             </div>
         </section>
     )
-
 }
 
 export default RentalProcess

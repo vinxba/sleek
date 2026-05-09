@@ -14,21 +14,20 @@ const cardVariants = {
 }
 
 const TestimonialCard = ({ testimonial, index, image }) => (
-
     <motion.div
         variants={cardVariants}
         transition={{ duration: 0.65, delay: index * 0.14, ease: [0.25, 0.1, 0.25, 1] }}
-        className="flex flex-col justify-between gap-5 p-5  relative"
+        className="flex flex-col justify-between gap-5 p-5 relative"
     >
         <div className="absolute top-1/4 -left-2 w-[110px] h-[120px] rounded-full object-cover shrink-0">
             <img
                 src={image}
                 alt={testimonial.name}
-                className=" overflow-hidden w-[110px] h-[120px] testimonial-card"
+                className="overflow-hidden w-[110px] h-[120px] testimonial-card"
             />
         </div>
         <div className="bg-brand-card flex flex-col justify-between min-h-[250px] p-5 rounded-2xl">
-            <div className="flex gap-6 ps-6 pe-2 ">
+            <div className="flex gap-6 ps-6 pe-2">
                 <span
                     className="font-heading font-black text-brand-gold shrink-0 select-none"
                     style={{ fontSize: "3.5rem", lineHeight: "1", marginTop: "-6px" }}
@@ -63,12 +62,9 @@ const TestimonialCard = ({ testimonial, index, image }) => (
             </div>
         </div>
     </motion.div>
-
 )
 
-
 const Testimonials = () => {
-
     return (
         <section id="testimonials" className="section-padding bg-brand-darker">
             <div className="container-custom">
@@ -80,13 +76,18 @@ const Testimonials = () => {
                         <img
                             src={pointerArrow}
                             alt=""
-                            className="shrink-0"
+                            className="shrink-0 invert opacity-50" // Added invert/opacity to match white theme
                             style={{ transform: "scaleX(-1)" }}
                         />
-                        <h2 className="font-heading font-black text-brand-gold text-heading-md md:text-[2.6rem] tracking-wide text-center">
+                        {/* CHANGED text-brand-gold to text-white */}
+                        <h2 className="font-heading font-black text-white text-heading-md md:text-[2.6rem] tracking-wide text-center">
                             What Client Say
                         </h2>
-                        <img src={pointerArrow} alt="" className="shrink-0" />
+                        <img 
+                            src={pointerArrow} 
+                            alt="" 
+                            className="shrink-0 invert opacity-50" 
+                        />
                     </div>
                 </div>
 
@@ -98,13 +99,17 @@ const Testimonials = () => {
                     variants={{ hidden: {}, show: { transition: { staggerChildren: 0.14 } } }}
                 >
                     {testimonials.map((testimonial, index) => (
-                        <TestimonialCard key={testimonial.id} testimonial={testimonial} index={index} image={userImages[index]} />
+                        <TestimonialCard 
+                            key={testimonial.id} 
+                            testimonial={testimonial} 
+                            index={index} 
+                            image={userImages[index]} 
+                        />
                     ))}
                 </motion.div>
             </div>
         </section>
     )
-
 }
 
 export default Testimonials

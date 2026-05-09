@@ -6,7 +6,6 @@ import pointerArrow from "@/assets/svg/pointer-bash.svg"
 const POSTS_PER_PAGE = 3
 
 const BlogCard = ({ post, index }) => (
-
     <motion.div
         key={post.id}
         className="relative pt-7"
@@ -15,41 +14,37 @@ const BlogCard = ({ post, index }) => (
         exit={{ opacity: 0, y: 20 }}
         transition={{ duration: 0.5, delay: index * 0.1, ease: [0.25, 0.1, 0.25, 1] }}
     >
-        <div class="relative w-full h-[450px] rounded-[40px] overflow-hidden group">
+        <div className="relative w-full h-[450px] rounded-[40px] overflow-hidden group">
             <img
                 src={post.image}
                 alt={post.title}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover/card:scale-105"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
             />
 
-            <div class="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent"></div>
 
-            <div class="absolute top-0 left-0">
-                <div class="absolute top-0 left-0 w-28 h-28 bg-[#0B0F14] rounded-br-[40px]">
-                    <div class="absolute -right-6 top-0 w-6 h-6 bg-[#0B0F14] shadow-[-10px_-10px_0_0_#0B0F14] rounded-tl-full hidden md:block"></div>
+            <div className="absolute top-0 left-0">
+                <div className="absolute top-0 left-0 w-28 h-28 bg-[#0B0F14] rounded-br-[40px]">
+                    <div className="absolute -right-6 top-0 w-6 h-6 bg-[#0B0F14] shadow-[-10px_-10px_0_0_#0B0F14] rounded-tl-full hidden md:block"></div>
                 </div>
 
-                <div class="relative m-4 flex flex-col items-center justify-center w-20 h-20 rounded-full border border-orange-400 text-white bg-[#0B0F14]">
-                    <span class="text-2xl font-bold text-orange-400">{post.day}</span>
-                    <span class="text-xs uppercase tracking-widest text-gray-400">{post.month}</span>
+                <div className="relative m-4 flex flex-col items-center justify-center w-20 h-20 rounded-full border border-orange-400 text-white bg-[#0B0F14]">
+                    <span className="text-2xl font-bold text-orange-400">{post.day}</span>
+                    <span className="text-xs uppercase tracking-widest text-gray-400">{post.month}</span>
                 </div>
             </div>
 
-            <div class="absolute bottom-10 inset-x-0 text-center px-6">
-                <p class="text-orange-400 text-[10px] tracking-[0.2em] font-bold uppercase mb-2">{post.category}</p>
-                <h2 class="text-white text-2xl font-semibold leading-tight">
+            <div className="absolute bottom-10 inset-x-0 text-center px-6">
+                <p className="text-orange-400 text-[10px] tracking-[0.2em] font-bold uppercase mb-2">{post.category}</p>
+                <h2 className="text-white text-2xl font-semibold leading-tight">
                     {post.title}
                 </h2>
             </div>
         </div>
-
     </motion.div>
-
 )
 
-
 const Blog = () => {
-
     const [page, setPage] = useState(0)
 
     const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE)
@@ -67,13 +62,18 @@ const Blog = () => {
                         <img
                             src={pointerArrow}
                             alt=""
-                            className="shrink-0"
+                            className="shrink-0 invert opacity-50"
                             style={{ transform: "scaleX(-1)" }}
                         />
-                        <h2 className="font-heading font-black text-brand-gold text-heading-md md:text-[2.6rem] tracking-wide text-center">
+                        {/* Heading changed to white */}
+                        <h2 className="font-heading font-black text-white text-heading-md md:text-[2.6rem] tracking-wide text-center">
                             Latest News
                         </h2>
-                        <img src={pointerArrow} alt="" className="shrink-0" />
+                        <img 
+                            src={pointerArrow} 
+                            alt="" 
+                            className="shrink-0 invert opacity-50" 
+                        />
                     </div>
                 </div>
 
@@ -90,7 +90,11 @@ const Blog = () => {
                         <button
                             key={i}
                             onClick={() => setPage(i)}
-                            className={`rounded-full transition-all duration-300 cursor-pointer border-none ${i === page ? "w-4 h-4 bg-brand-gold" : "w-3 h-3 bg-transparent border-2 border-brand-gray-dark hover:border-brand-gold"}`}
+                            className={`rounded-full transition-all duration-300 cursor-pointer border-none ${
+                                i === page 
+                                ? "w-4 h-4 bg-brand-gold" 
+                                : "w-3 h-3 bg-transparent border-2 border-brand-gray-dark hover:border-brand-gold"
+                            }`}
                         />
                     ))}
                 </div>
@@ -98,7 +102,6 @@ const Blog = () => {
             </div>
         </section>
     )
-
 }
 
 export default Blog

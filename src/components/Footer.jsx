@@ -1,269 +1,167 @@
-import { useState } from "react"
-import { motion } from "motion/react"
-import { Phone, Mail, MapPin } from "lucide-react"
-import logoFull from "@/assets/icons/logo.png"
-
-// Quick links mirror the navbar
-const quickLinks = [
-    { label: "About", href: "#about" },
-    { label: "Cars", href: "#recommended" },
-    { label: "Car Types", href: "#categories" },
-    { label: "Contact", href: "#contact" },
-]
-
-const contactInfo = [
-    {
-        icon: Phone,
-        label: "Call us",
-        value: "050 955 8865",
-        href: "tel:+9710509558865",
-    },
-    {
-        icon: Mail,
-        label: "Write to us",
-        value: "csr@armeny.ae",
-        href: "mailto:csr@armeny.ae",
-    },
-    {
-        icon: MapPin,
-        label: "Address",
-        value: "Dubai, Garhoud Community Building office#213",
-        href: "https://maps.google.com/?q=Garhoud+Dubai",
-    },
-]
-
-// Social icons as inline SVGs to avoid lucide gaps (LinkedIn, TikTok, X)
-const SocialIcons = {
-    Facebook: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
-        </svg>
-    ),
-    LinkedIn: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6zM2 9h4v12H2zm2-6a2 2 0 1 1 0 4 2 2 0 0 1 0-4z" />
-        </svg>
-    ),
-    Instagram: () => (
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" width="16" height="16">
-            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
-            <circle cx="12" cy="12" r="4" />
-            <circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none" />
-        </svg>
-    ),
-    X: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-        </svg>
-    ),
-    TikTok: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-2.88 2.5 2.89 2.89 0 0 1-2.89-2.89 2.89 2.89 0 0 1 2.89-2.89c.28 0 .54.04.79.1V9.01a6.33 6.33 0 0 0-.79-.05 6.34 6.34 0 0 0-6.34 6.34 6.34 6.34 0 0 0 6.34 6.34 6.34 6.34 0 0 0 6.33-6.34V8.69a8.26 8.26 0 0 0 4.83 1.55V6.78a4.85 4.85 0 0 1-1.06-.09z" />
-        </svg>
-    ),
-    YouTube: () => (
-        <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16">
-            <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.6C5.12 20.06 12 20.06 12 20.06s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.95A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
-        </svg>
-    ),
-}
-
-const socialLinks = [
-    { Icon: SocialIcons.Facebook, label: "Facebook", href: "#", color: "#1877F2" },
-    { Icon: SocialIcons.LinkedIn, label: "LinkedIn", href: "#", color: "#0A66C2" },
-    { Icon: SocialIcons.Instagram, label: "Instagram", href: "#", color: "#E1306C" },
-    { Icon: SocialIcons.X, label: "X", href: "#", color: "#ffffff" },
-    { Icon: SocialIcons.TikTok, label: "TikTok", href: "#", color: "#ffffff" },
-    { Icon: SocialIcons.YouTube, label: "YouTube", href: "#", color: "#FF0000" },
-]
-
-// Payment method pills (text-based, styled like the Visa/Mastercard etc in the image)
-const paymentMethods = ["VISA", "MC", "UnionPay", "₿", "💳"]
-
-const PaymentBadge = ({ method }) => (
-    <span className="inline-flex items-center justify-center px-2.5 py-1 rounded text-[11px] font-bold border border-brand-border bg-brand-card text-brand-gray-light select-none">
-        {method}
-    </span>
-)
+import { useState, useRef } from "react"
+import { motion, useInView } from "motion/react"
+import { ArrowUpRight, Send, Phone, Mail, MapPin } from "lucide-react"
 
 const Footer = () => {
+    const container = useRef(null)
+    const isInView = useInView(container, { once: true, margin: "-10%" })
 
-    const [email, setEmail] = useState("")
-
-    const handleNavClick = (href) => {
-        document.querySelector(href)?.scrollIntoView({ behavior: "smooth" })
+    const fadeInUp = {
+        hidden: { opacity: 0, y: 40 },
+        visible: { 
+            opacity: 1, 
+            y: 0, 
+            transition: { duration: 0.8, ease: [0.33, 1, 0.68, 1] } 
+        }
     }
 
-    const handleSubscribe = (e) => {
-        e.preventDefault()
-        setEmail("")
+    const staggerContainer = {
+        hidden: { opacity: 0 },
+        visible: {
+            opacity: 1,
+            transition: { staggerChildren: 0.1, delayChildren: 0.2 }
+        }
     }
 
     return (
-        <motion.footer
-            id="contact"
-            initial={{ opacity: 0 }}
-            whileInView={{ opacity: 1 }}
-            viewport={{ once: true, margin: "-5% 0px" }}
-            transition={{ duration: 0.7 }}
-            className="bg-brand-darker border-t border-brand-border"
+        <footer 
+            ref={container}
+            className="bg-[#050505] text-white overflow-hidden border-t border-white/5"
         >
-            {/* ── Top strip: Map + Contact cards ── */}
-            <div className="border-b border-brand-border">
-                <div className="container-custom py-10">
-                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+            {/* --- TOP HERO CONTACT SECTION (PRESERVED) --- */}
+            <div className="grid grid-cols-1 lg:grid-cols-2 min-h-[80vh]">
+                <motion.div 
+                    variants={staggerContainer}
+                    initial="hidden"
+                    animate={isInView ? "visible" : "hidden"}
+                    className="p-8 md:p-20 lg:p-32 flex flex-col justify-center border-r border-white/5"
+                >
+                    <motion.div variants={fadeInUp} className="mb-16">
+                        <span className="text-white/30 text-[10px] font-black tracking-[0.5em] uppercase mb-4 block">
+                            Contact / Inquiry
+                        </span>
+                        <h2 className="text-5xl md:text-7xl font-black tracking-tighter uppercase leading-[0.9] ">
+                            Join the <br /> 
+                            <span className="text-transparent stroke-white stroke-1" style={{ WebkitTextStroke: "1px rgba(255,255,255,0.3)" }}>
+                                Movement.
+                            </span>
+                        </h2>
+                    </motion.div>
 
-                        {/* Google Maps embed */}
-                        <div className="rounded-2xl overflow-hidden border border-brand-border" style={{ height: "240px" }}>
-                            <iframe
-                                title="Sleek Location"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.7!2d55.3375!3d25.2485!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5d3b6b6b6b6b%3A0x0!2zR2FyaG91ZCwgRHViYWk!5e0!3m2!1sen!2sae!4v1234567890"
-                                width="100%"
-                                height="100%"
-                                style={{ border: 0, filter: "invert(90%) hue-rotate(180deg)" }}
-                                allowFullScreen=""
-                                loading="lazy"
-                                referrerPolicy="no-referrer-when-downgrade"
-                            />
+                    <form className="space-y-12 max-w-lg">
+                        {["Full Name", "Email Address", "Project Brief"].map((label) => (
+                            <motion.div variants={fadeInUp} key={label} className="relative group">
+                                <input 
+                                    type="text" 
+                                    required
+                                    className="peer w-full bg-transparent border-b border-white/10 py-4 text-lg font-bold tracking-tight outline-none transition-colors focus:border-white placeholder-transparent"
+                                    placeholder={label}
+                                />
+                                <label className="absolute left-0 top-4 text-white/20 text-xs font-black uppercase tracking-widest transition-all peer-focus:-top-6 peer-focus:text-white peer-valid:-top-6 peer-valid:text-white">
+                                    {label}
+                                </label>
+                                <div className="absolute bottom-0 left-0 h-[2px] w-0 bg-white transition-all duration-500 group-focus-within:w-full" />
+                            </motion.div>
+                        ))}
+
+                        <motion.button 
+                            variants={fadeInUp}
+                            whileHover={{ scale: 1.02 }}
+                            whileTap={{ scale: 0.98 }}
+                            className="group flex items-center justify-between w-full py-6 px-10 bg-white text-black font-black uppercase tracking-[0.3em] text-[11px] overflow-hidden relative"
+                        >
+                            <span className="relative z-10">Initiate Protocol</span>
+                            <Send size={16} className="relative z-10 transition-transform group-hover:translate-x-2 group-hover:-translate-y-1" />
+                            <div className="absolute inset-0 bg-neutral-200 translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
+                        </motion.button>
+                    </form>
+                </motion.div>
+
+                <div className="relative group h-[500px] lg:h-auto overflow-hidden">
+                    <motion.div 
+                        initial={{ scale: 1.2, filter: "grayscale(100%)" }}
+                        animate={isInView ? { scale: 1, filter: "grayscale(100%) contrast(1.2)" } : {}}
+                        transition={{ duration: 2 }}
+                        className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1449824913935-59a10b8d2000?q=80&w=2000')] bg-cover bg-center"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent lg:bg-gradient-to-r lg:from-black lg:to-transparent" />
+                    
+                    <motion.div 
+                        initial={{ x: 100, opacity: 0 }}
+                        animate={isInView ? { x: 0, opacity: 1 } : {}}
+                        transition={{ delay: 0.8, duration: 1 }}
+                        className="absolute bottom-12 left-8 md:left-12 p-8 border border-white/10 backdrop-blur-xl bg-black/40 max-w-xs"
+                    >
+                        <div className="flex justify-between items-start mb-8">
+                            <span className="w-12 h-[1px] bg-white/50 mt-2" />
+                            <ArrowUpRight size={20} className="text-white/30" />
                         </div>
+                        <h4 className="text-[10px] font-black tracking-[0.4em] uppercase text-white/40 mb-2">Regional HQ</h4>
+                        <p className="text-xl font-bold leading-tight uppercase">Garhoud, Dubai <br />United Arab Emirates</p>
+                    </motion.div>
+                </div>
+            </div>
 
-                        {/* Contact cards */}
-                        <div className="flex flex-col gap-5 justify-center h-full">
-                            {contactInfo.map(({ icon: Icon, label, value, href }) => (
-                                <a
-                                    key={label}
-                                    href={href}
-                                    target={href.startsWith("http") ? "_blank" : undefined}
-                                    rel="noreferrer"
-                                    className="flex items-center gap-4 group no-underline"
-                                >
-                                    <div className="w-12 h-12 rounded-full bg-brand-gold flex items-center justify-center shrink-0 shadow-gold group-hover:bg-brand-gold-light transition-colors duration-200">
-                                        <Icon size={20} className="text-brand-dark" />
-                                    </div>
-                                    <div className="flex flex-col">
-                                        <span className="font-heading font-semibold text-brand-white text-body-sm leading-tight">
-                                            {label}
-                                        </span>
-                                        <span className="font-body text-body-sm text-brand-gray group-hover:text-brand-gold transition-colors duration-200">
-                                            {value}
-                                        </span>
-                                    </div>
+            {/* --- UPDATED BOTTOM SECTION: CONTACT INFO & MAP --- */}
+            <div className="border-t border-white/5 py-24 px-8 md:px-20">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-16">
+                    
+                    {/* Brand & Socials (As per image) */}
+                    <div className="lg:col-span-3">
+                        <h3 className="text-4xl font-black tracking-tighter uppercase mb-8 italic">Sleek.</h3>
+                        <div className="flex gap-4">
+                            {["TW", "IG", "LI"].map(social => (
+                                <a key={social} href="#" className="w-12 h-12 border border-white/10 flex items-center justify-center text-[10px] font-black hover:bg-white hover:text-black transition-all uppercase">
+                                    {social}
                                 </a>
                             ))}
                         </div>
-
                     </div>
-                </div>
-            </div>
+                    <div className="lg:col-span-5 h-[300px] rounded-sm overflow-hidden border border-white/5 grayscale invert opacity-60 contrast-125 hover:opacity-100 transition-opacity duration-700">
+                        <iframe 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3608.210408569833!2d55.34005137604368!3d25.275249577659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e5f5c9443793f77%3A0x6b84013400045f4!2sHor%20Al%20Anz%20East%20-%20Dubai!5e0!3m2!1sen!2sae!4v1715243452425!5m2!1sen!2sae" 
+                            width="100%" 
+                            height="100%" 
+                            style={{ border: 0 }} 
+                            allowFullScreen="" 
+                            loading="lazy" 
+                            referrerPolicy="no-referrer-when-downgrade"
+                        />
+                    </div>
 
-            {/* ── Bottom section: Logo / Quick Links / Subscribe ── */}
-            <div className="container-custom py-12">
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-10">
-
-                    {/* Logo + tagline + payment */}
-                    <div className="flex flex-col gap-5">
-                        <img src={logoFull} alt="Sleek" className="h-9 object-contain object-left" />
-
-                        <p className="font-body text-body-sm text-brand-gray leading-relaxed max-w-xs">
-                            It's time to makeover your drive! Rent a car today and hit the road in style!
-                        </p>
-
-                        <div className="flex flex-col gap-2">
-                            <span className="font-body text-caption text-brand-gray-dark">
-                                Flexible ways to pay your partner directly
-                            </span>
-                            <div className="flex items-center gap-2 flex-wrap">
-                                {paymentMethods.map(m => (
-                                    <PaymentBadge key={m} method={m} />
-                                ))}
+                    {/* Contact Details */}
+                    <div className="lg:col-span-4 grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-8">
+                        <div className="space-y-6">
+                            <div>
+                                <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-20 mb-4">Call Us</h5>
+                                <a href="tel:00971507023905" className="text-sm font-bold hover:text-white transition-colors tracking-widest">+00971 50 702 3905</a>
+                            </div>
+                            <div>
+                                <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-20 mb-4">Write to us</h5>
+                                <a href="mailto:info@sleek-cars.com" className="text-sm font-bold hover:text-white transition-colors tracking-widest">info@sleek-cars.com</a>
                             </div>
                         </div>
-                    </div>
-
-                    {/* Quick links */}
-                    <div className="flex flex-col gap-4">
-                        <h4 className="font-heading font-bold text-brand-white text-heading-sm">
-                            Quick Links
-                        </h4>
-                        <ul className="flex flex-col gap-3">
-                            {quickLinks.map(link => (
-                                <li key={link.label} className="flex items-center gap-2">
-                                    <span className="w-1.5 h-1.5 rounded-full bg-brand-gold shrink-0" />
-                                    <button
-                                        onClick={() => handleNavClick(link.href)}
-                                        className="font-body text-body-sm text-brand-gray hover:text-brand-gold transition-colors duration-200 bg-transparent border-none cursor-pointer text-left"
-                                    >
-                                        {link.label}
-                                    </button>
-                                </li>
-                            ))}
-                        </ul>
-                    </div>
-
-                    {/* Subscribe + social */}
-                    <div className="flex flex-col gap-5">
-                        <div className="flex flex-col gap-1.5">
-                            <h4 className="font-heading font-bold text-brand-white text-heading-sm">
-                                Subscribe
-                            </h4>
-                            <p className="font-body text-body-sm text-brand-gray leading-relaxed">
-                                Want to be notified about our services. Just sign up and we'll send you a notification by email.
+                        
+                        <div className="md:col-span-1">
+                            <h5 className="text-[10px] font-black tracking-[0.4em] uppercase opacity-20 mb-4">Address</h5>
+                            <p className="text-sm font-bold leading-relaxed text-white/60 tracking-widest uppercase">
+                                BUILDING-ASWAAQ-10, DAR AL ZAHIA 28, 15C STREET, HOR AL ANZ EAST DEIRA DUBAI, UAE
                             </p>
                         </div>
-
-                        <form onSubmit={handleSubscribe} className="flex items-center gap-0 rounded-full border border-brand-border bg-brand-card overflow-hidden pr-1">
-                            <input
-                                type="email"
-                                placeholder="Email Address"
-                                value={email}
-                                onChange={e => setEmail(e.target.value)}
-                                className="flex-1 bg-transparent px-4 py-3 font-body text-body-sm text-brand-white placeholder:text-brand-gray outline-none border-none"
-                                required
-                            />
-                            <button
-                                type="submit"
-                                className="w-9 h-9 rounded-full bg-brand-gold flex items-center justify-center shrink-0 hover:bg-brand-gold-light transition-colors duration-200 cursor-pointer border-none"
-                                aria-label="Subscribe"
-                            >
-                                <svg viewBox="0 0 24 24" fill="none" stroke="#0B1120" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" width="15" height="15">
-                                    <path d="M5 12h14M12 5l7 7-7 7" />
-                                </svg>
-                            </button>
-                        </form>
-
-                        <div className="flex flex-col gap-2.5">
-                            <span className="font-body text-body-sm text-brand-gray">Follow us on:</span>
-                            <div className="flex items-center gap-2">
-                                {socialLinks.map(({ Icon, label, href, color }) => (
-                                    <a
-                                        key={label}
-                                        href={href}
-                                        aria-label={label}
-                                        className="w-8 h-8 rounded-full flex items-center justify-center bg-brand-card border border-brand-border hover:border-brand-gold transition-all duration-200"
-                                        style={{ color }}
-                                    >
-                                        <Icon />
-                                    </a>
-                                ))}
-                            </div>
-                        </div>
                     </div>
 
+                    {/* Interactive Map */}
+                    
                 </div>
             </div>
 
-            {/* ── Copyright bar ── */}
-            <div className="border-t border-brand-border">
-                <div className="container-custom py-4 text-center">
-                    <p className="font-body text-caption text-brand-gray-dark">
-                        ©Sleek 2024 Corporation. All rights reserved.
-                    </p>
-                </div>
+            {/* Final Copyright */}
+            <div className="p-8 border-t border-white/5 flex flex-col md:flex-row justify-between items-center text-[10px] font-black tracking-[0.3em] uppercase text-white/20">
+                <span>© POWERD BY CAREERGIZE LLP</span>
+                <span>Designed for the Elite</span>
             </div>
-
-        </motion.footer>
+        </footer>
     )
-
 }
 
 export default Footer

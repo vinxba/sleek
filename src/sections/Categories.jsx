@@ -1,165 +1,140 @@
-import { useState, useMemo } from "react" // Added useMemo
+import { useState } from "react"
 import { Link } from "react-router-dom"
-import { AnimatePresence, motion } from "motion/react"
-import { Gauge, Zap, Users, MessageCircle, Tag } from "lucide-react"
-import { fleetCars } from "@/data/cars"
-import pointerArrow from "@/assets/svg/pointer-bash.svg"
-import BookingModal from "@/components/BookingModal"
+import { motion } from "motion/react"
+import { ArrowRight, Plus } from "lucide-react"
 
-const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
-    show: { opacity: 1, y: 0 },
-}
+// Asset Imports
+import lamboAventador from "@/assets/cars/fleet/lamborghini_aventador.jpg"
+import benely from "@/assets/cars/fleet/bentley_continental_gt.jpg"
+import rangerover from "@/assets/cars/fleet/range_rover_autobiography.jpg"
+import sonata from "@/assets/cars/fleet/sonataImg.jpg"
 
-const FleetCard = ({ car, index, onBook }) => {
+const fleetCategories = [
+    {
+        id: "luxury",
+        type: "Luxury Cars",
+        description: "Executive travel redefined with Bentley and BMW elite models.",
+        image: benely,
+        variant: "large"
+    },
+    {
+        id: "suv",
+        type: "SUVs",
+        description: "All-terrain dominance featuring Audi and Toyota premium utility vehicles.",
+        image: rangerover,
+        variant: "large"
+    },
+    {
+        id: "sports",
+        type: "Sports Cars",
+        description: "Raw performance and precision engineering for high-speed transit.",
+        image: lamboAventador,
+        variant: "large"
+    },
+    {
+        id: "spacer", // Empty block to push Economy to the middle column
+        variant: "empty"
+    },
+    {
+        id: "economy",
+        type: "Economy",
+        description: "Most economy cars available for you.",
+        image: sonata,
+        variant: "large"
+    },
+]
+const CategoryCard = ({ item }) => {
+    if (item.variant === "empty") {
+        return <div className="hidden lg:block" aria-hidden="true" />;
+    }
+
+    const isSmall = item.variant === "small";
+
     return (
-        <motion.div
-            variants={cardVariants}
-            transition={{ duration: 0.6, ease: [0.25, 0.1, 0.25, 1] }}
-            className="flex flex-col bg-brand-card rounded-2xl overflow-hidden h-full"
+        <motion.div 
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            // whileTap handles the "touch" zoom for mobile devices
+            whileTap={{ scale: 0.98 }} 
+            className="flex flex-col bg-[#111111] border border-white/5 overflow-hidden group h-full cursor-pointer"
         >
-            <div className="relative overflow-hidden group/img" style={{ height: "210px" }}>
-                <img
-                    src={car.image}
-                    alt={car.name}
-                    className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
-                />
-                <div
-                    className="absolute inset-0"
-                    style={{ background: "linear-gradient(to bottom, transparent 30%, #111827 100%)" }}
-                />
-            </div>
+            {!isSmall && (
+                <div className="relative h-[280px] overflow-hidden">
+                    <img 
+                        src={item.image} 
+                        alt={item.type} 
+                        /* 
+                           CHANGES:
+                           1. Removed 'grayscale' and 'group-hover:grayscale-0'
+                           2. Added 'transition-transform' with a custom duration
+                           3. Changed scale from 105 to 110 for a more noticeable zoom
+                        */
+                        className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-110 group-active:scale-110"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-[#111111] via-transparent to-transparent opacity-80" />
+                </div>
+            )}
 
-            <div className="flex flex-col gap-4 p-5 flex-grow">
-                <div className="flex flex-col gap-1">
-                    <span className="font-heading text-caption font-semibold text-brand-gold tracking-[0.2em] uppercase">
-                        {car.brand}
+            <div className="p-8 flex flex-col flex-grow">
+                {isSmall && (
+                    <span className="text-[10px] tracking-[0.2em] text-gray-500 font-bold mb-4 uppercase">
+                        {item.label}
                     </span>
-                    <h3 className="font-heading font-bold text-brand-white text-heading-sm leading-snug">
-                        {car.name}
-                    </h3>
-                </div>
+                )}
+                
+                <h3 className="text-3xl font-bold text-white mb-4 leading-tight">
+                    {item.type}
+                </h3>
+                
+                <p className="text-gray-400 text-sm leading-relaxed mb-8 flex-grow">
+                    {item.description}
+                </p>
 
-                <div className="grid grid-cols-3 gap-2 py-3 border-t border-b border-brand-border">
-                    <div className="flex flex-col items-center gap-1.5">
-                        <div className="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center">
-                            <Gauge size={14} className="text-brand-gray" />
-                        </div>
-                        <span className="font-body text-caption text-brand-white font-medium">{car.specs.speed} km/h</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1.5">
-                        <div className="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center">
-                            <Zap size={14} className="text-brand-gray" />
-                        </div>
-                        <span className="font-body text-caption text-brand-white font-medium">{car.specs.hp} HP</span>
-                    </div>
-                    <div className="flex flex-col items-center gap-1.5">
-                        <div className="w-8 h-8 rounded-full border border-brand-border flex items-center justify-center">
-                            <Users size={14} className="text-brand-gray" />
-                        </div>
-                        <span className="font-body text-caption text-brand-white font-medium">{car.specs.seats} Seats</span>
-                    </div>
-                </div>
-
-                <div className="flex items-center gap-6">
-                    <div className="flex flex-col gap-0.5">
-                        <span className="font-body text-caption text-brand-gray">AED</span>
-                        <div className="flex items-baseline gap-1">
-                            <span className="font-heading font-bold text-brand-gold text-heading-sm">{car.priceDay.toLocaleString()}</span>
-                            <span className="font-body text-caption text-brand-gray">/ day</span>
+                {isSmall ? (
+                    <div className="flex items-center justify-between pt-6 border-t border-white/10">
+                        <span className="text-[10px] font-bold tracking-widest text-white uppercase">
+                            {item.models}
+                        </span>
+                        <div className="w-6 h-6 rounded-full border border-white/20 flex items-center justify-center group-hover:border-white transition-colors">
+                            <Plus size={12} className="text-white" />
                         </div>
                     </div>
-                    <div className="w-px h-8 bg-brand-border" />
-                    <div className="flex flex-col gap-0.5">
-                        <span className="font-body text-caption text-brand-gray">AED</span>
-                        <div className="flex items-baseline gap-1">
-                            <span className="font-heading font-bold text-brand-gold text-heading-sm">{car.priceMonth.toLocaleString()}</span>
-                            <span className="font-body text-caption text-brand-gray">/ month</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div className="flex gap-3 mt-auto">
-                    <button
-                        onClick={() => onBook(car)}
-                        className="flex-1 flex items-center justify-center gap-2 bg-brand-gold text-brand-dark font-heading font-semibold text-body-sm py-2.5 px-4 rounded-lg hover:bg-brand-gold-dark transition-colors duration-200 cursor-pointer border-none"
+                ) : (
+                    <Link 
+                        to="/cars" 
+                        className="flex items-center gap-2 text-[10px] font-bold tracking-widest text-white uppercase group-hover:gap-4 transition-all no-underline"
                     >
-                        <MessageCircle size={15} />
-                        Book Now
-                    </button>
-                    <Link
-                        to={`/car/${car.id}`}
-                        className="flex-1 flex items-center justify-center gap-2 border border-brand-border text-brand-white font-heading font-semibold text-body-sm py-2.5 px-4 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 no-underline"
-                    >
-                        <Tag size={14} />
-                        View Offer
+                        View Specs <ArrowRight size={14} />
                     </Link>
-                </div>
+                )}
             </div>
         </motion.div>
     )
 }
-
 const Fleet = () => {
-    const [selectedCar, setSelectedCar] = useState(null)
-
-    // FILTER: Shows only cars with priceDay >= 500
-    const premiumCars = useMemo(() => {
-        return fleetCars.filter(car => car.priceDay >= 500)
-    }, [])
-
     return (
-        <>
-            <AnimatePresence>
-                {selectedCar && (
-                    <BookingModal car={selectedCar} onClose={() => setSelectedCar(null)} />
-                )}
-            </AnimatePresence>
-
-            <section id="categories" className="section-padding bg-brand-dark">
-                <div className="container-custom">
-                    <div className="flex flex-col items-center gap-3 mb-14">
-                        <span className="font-heading font-semibold text-brand-gray text-caption tracking-[0.3em] uppercase">
-                            Premium Inventory
-                        </span>
-
-                        <div className="flex items-center gap-4">
-                            <img
-                                src={pointerArrow}
-                                alt=""
-                                className="shrink-0"
-                                style={{ transform: "scaleX(-1)" }}
-                            />
-                            <h2 className="font-heading font-black text-brand-gold text-heading-md md:text-[2.6rem] tracking-wide text-center">
-                                Find Your Signature 
-                            </h2>
-                            <img src={pointerArrow} alt="" className="shrink-0" />
-                        </div>
-                    </div>
-
-                    <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8"
-                        initial="hidden"
-                        whileInView="show"
-                        viewport={{ once: true, margin: "-5% 0px" }}
-                        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.1 } } }}
-                    >
-                        {premiumCars.map((car, index) => (
-                            <FleetCard key={car.id} car={car} index={index} onBook={setSelectedCar} />
-                        ))}
-                    </motion.div>
-
-                    <div className="flex items-center justify-center mt-14">
-                        <Link to="/cars" className="no-underline">
-                            <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
-                                See Full Fleet
-                            </button>
-                        </Link>
-                    </div>
+        <section id="categories" className="py-24 bg-[#0A0A0A]">
+            <div className="container-custom">
+                
+                {/* Header Section */}
+                <div className="border-b border-white/10 pb-8 mb-12">
+                   
+                    <h2 className="text-5xl font-black text-white tracking-tight uppercase mt-2">
+                        Fleet <span className="text-white/40 font-light">Selection.</span>
+                    </h2>
                 </div>
-            </section>
-        </>
+
+                {/* Categories Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                    {fleetCategories.map((item) => (
+                        <CategoryCard key={item.id} item={item} />
+                    ))}
+                </div>
+
+            </div>
+        </section>
     )
 }
 
-export default Fleet
+export default Fleet;

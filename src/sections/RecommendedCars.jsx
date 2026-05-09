@@ -1,100 +1,93 @@
 import { useState } from "react"
 import { Link } from "react-router-dom"
 import { AnimatePresence, motion } from "motion/react"
-import { Gauge, Zap, Users, MessageCircle, Tag } from "lucide-react"
+import { Gauge, Zap, Users, MessageCircle, ChevronRight } from "lucide-react"
 import { fleetCars } from "@/data/cars"
-import pointerArrow from "@/assets/svg/pointer-bash.svg"
 import BookingModal from "@/components/BookingModal"
 
 const cardVariants = {
-    hidden: { opacity: 0, y: 40 },
+    hidden: { opacity: 0, y: 30 },
     show: { opacity: 1, y: 0 },
 }
 
-const AffordableCard = ({ car, onBook }) => (
-
-    <div className="flex flex-col bg-brand-card rounded-2xl overflow-hidden">
-        <div className="relative overflow-hidden group/img" style={{ height: "175px" }}>
+const RecommendedCard = ({ car, onBook }) => (
+    <div className="flex flex-col bg-white/[0.02] border border-white/10 rounded-sm overflow-hidden h-full hover:border-white/40 transition-all duration-500 group">
+        {/* Image Container */}
+        <div className="relative overflow-hidden aspect-[16/10]">
             <img
                 src={car.image}
                 alt={car.name}
-                className="w-full h-full object-cover transition-transform duration-500 group-hover/img:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
             />
-            <div
-                className="absolute inset-0"
-                style={{ background: "linear-gradient(to bottom, transparent 40%, #111827 100%)" }}
-            />
+            <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-80" />
         </div>
 
-        <div className="flex flex-col gap-3 p-4">
-            <div className="flex flex-col items-center gap-0.5 text-center">
-                <span className="font-heading text-caption font-semibold text-brand-gold tracking-[0.2em] uppercase">
+        <div className="flex flex-col gap-4 p-6 flex-grow">
+            {/* Header */}
+            <div>
+                <span className="text-[10px] font-black text-white/40 tracking-[0.3em] uppercase block mb-1">
                     {car.brand}
                 </span>
-                <h3 className="font-heading font-bold text-brand-white text-body leading-snug">
+                <h3 className="text-white text-xl font-bold tracking-tight">
                     {car.name}
                 </h3>
             </div>
 
-            <div className="flex justify-center gap-5 py-2 border-t border-b border-brand-border">
+            {/* Specs Grid */}
+            <div className="grid grid-cols-3 gap-2 py-4 border-y border-white/5">
                 <div className="flex flex-col items-center gap-1">
-                    <div className="w-7 h-7 rounded-full border border-brand-border flex items-center justify-center">
-                        <Gauge size={12} className="text-brand-gray" />
-                    </div>
-                    <span className="font-body text-caption text-brand-gray">{car.specs.speed} km/h</span>
+                    <Gauge size={14} className="text-white/30" />
+                    <span className="text-[10px] text-white/60 font-medium">{car.specs.speed} km/h</span>
+                </div>
+                <div className="flex flex-col items-center gap-1 border-x border-white/5">
+                    <Zap size={14} className="text-white/30" />
+                    <span className="text-[10px] text-white/60 font-medium">{car.specs.hp} HP</span>
                 </div>
                 <div className="flex flex-col items-center gap-1">
-                    <div className="w-7 h-7 rounded-full border border-brand-border flex items-center justify-center">
-                        <Zap size={12} className="text-brand-gray" />
-                    </div>
-                    <span className="font-body text-caption text-brand-gray">{car.specs.hp} HP</span>
-                </div>
-                <div className="flex flex-col items-center gap-1">
-                    <div className="w-7 h-7 rounded-full border border-brand-border flex items-center justify-center">
-                        <Users size={12} className="text-brand-gray" />
-                    </div>
-                    <span className="font-body text-caption text-brand-gray">{car.specs.seats} Seats</span>
+                    <Users size={14} className="text-white/30" />
+                    <span className="text-[10px] text-white/60 font-medium">{car.specs.seats} Seats</span>
                 </div>
             </div>
 
-            <div className="flex items-center gap-3">
-                <div className="flex items-baseline gap-1">
-                    <span className="font-body text-caption text-brand-gray">AED</span>
-                    <span className="font-heading font-bold text-brand-gold text-body">{car.priceDay.toLocaleString()}</span>
-                    <span className="font-body text-caption text-brand-gray">/ day</span>
+            {/* Pricing */}
+            <div className="flex items-center justify-between">
+                <div className="flex flex-col">
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 mb-1">Per Day</span>
+                    <p className="text-white font-black text-lg m-0">
+                        <span className="text-[11px] font-normal mr-1">AED</span>
+                        {car.priceDay.toLocaleString()}
+                    </p>
                 </div>
-                <div className="w-px h-4 bg-brand-border" />
-                <div className="flex items-baseline gap-1">
-                    <span className="font-body text-caption text-brand-gray">AED</span>
-                    <span className="font-heading font-bold text-brand-gold text-body">{car.priceMonth.toLocaleString()}</span>
-                    <span className="font-body text-caption text-brand-gray">/ mo</span>
+                <div className="h-8 w-[1px] bg-white/10" />
+                <div className="flex flex-col text-right">
+                    <span className="text-[9px] uppercase tracking-widest text-white/40 mb-1">Per Month</span>
+                    <p className="text-white/70 font-bold text-lg m-0">
+                        <span className="text-[11px] font-normal mr-1">AED</span>
+                        {car.priceMonth.toLocaleString()}
+                    </p>
                 </div>
             </div>
 
-            <div className="flex gap-2">
+            {/* Actions */}
+            <div className="flex gap-2 mt-2">
                 <button
                     onClick={() => onBook(car)}
-                    className="flex-1 flex items-center justify-center gap-1.5 bg-brand-card-hover border border-brand-border text-brand-white font-heading font-semibold text-caption py-2 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer"
+                    className="flex-1 bg-white text-black font-black text-[11px] tracking-widest uppercase py-3.5 hover:bg-neutral-200 transition-colors cursor-pointer border-none"
                 >
-                    <MessageCircle size={13} />
                     Book Now
                 </button>
                 <Link
                     to={`/car/${car.id}`}
-                    className="flex-1 flex items-center justify-center gap-1.5 border border-brand-border text-brand-gray font-heading font-semibold text-caption py-2 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 no-underline"
+                    className="flex-1 border border-white/20 text-white font-black text-[11px] tracking-widest uppercase py-3.5 flex items-center justify-center hover:bg-white/10 transition-all no-underline"
                 >
-                    <Tag size={12} />
-                    View Offer
+                    Details
                 </Link>
             </div>
         </div>
     </div>
-
 )
 
-
 const RecommendedCars = () => {
-
     const [selectedCar, setSelectedCar] = useState(null)
 
     return (
@@ -105,54 +98,50 @@ const RecommendedCars = () => {
                 )}
             </AnimatePresence>
 
-            <section id="recommended" className="section-padding bg-brand-dark">
+            <section id="recommended" className="py-24 bg-black">
                 <div className="container-custom">
-                    <div className="flex flex-col items-center gap-3 mb-12">
-                        <span className="font-heading font-semibold text-brand-gray text-caption tracking-[0.3em] uppercase">
-                            Recommended Cars
-                        </span>
-                        <div className="flex items-center gap-4">
-                            <img
-                                src={pointerArrow}
-                                alt=""
-                                className="shrink-0"
-                                style={{ transform: "scaleX(-1)" }}
-                            />
-                            <h2 className="font-heading font-bold text-brand-gold text-heading-md md:text-heading-xl leading-tight text-center">
-                                Recommended Cars Just for You
+                    {/* Minimalist Section Header */}
+                    <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-16">
+                        <div className="flex flex-col gap-4">
+                            <span className="text-white/30 text-[12px] font-black tracking-[0.4em] uppercase">
+                                Editor's Choice
+                            </span>
+                            <h2 className="text-white text-4xl md:text-6xl font-black tracking-tighter uppercase leading-none">
+                                Recommended <br />
+                                <span className="text-white/30 font-light">For You.</span>
                             </h2>
-                            <img src={pointerArrow} alt="" className="shrink-0" />
                         </div>
+                        
+                        <Link 
+                            to="/cars" 
+                            className="group flex items-center gap-3 text-white text-[12px] font-black tracking-widest uppercase no-underline border-b border-white/20 pb-2 hover:border-white transition-all"
+                        >
+                            Explore Fleet
+                            <ChevronRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        </Link>
                     </div>
 
                     <motion.div
-                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-7"
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
                         initial="hidden"
                         whileInView="show"
-                        viewport={{ once: true, margin: "-5% 0px" }}
-                        variants={{ hidden: {}, show: { transition: { staggerChildren: 0.08 } } }}
+                        viewport={{ once: true, margin: "-10%" }}
+                        variants={{ show: { transition: { staggerChildren: 0.1 } } }}
                     >
-                        {fleetCars.slice(0, 4).map((car, index) => (
+                        {fleetCars.slice(0, 4).map((car) => (
                             <motion.div
                                 key={car.id}
                                 variants={cardVariants}
-                                transition={{ duration: 0.6, delay: (index % 4) * 0.08, ease: [0.25, 0.1, 0.25, 1] }}
+                                transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                             >
-                                <AffordableCard car={car} onBook={setSelectedCar} />
+                                <RecommendedCard car={car} onBook={setSelectedCar} />
                             </motion.div>
                         ))}
                     </motion.div>
-
-                    <div className="flex items-center justify-center mt-12">
-                        <button className="font-heading font-semibold text-body-sm text-brand-gray border border-brand-border px-8 py-2.5 rounded-lg hover:border-brand-gold hover:text-brand-gold transition-colors duration-200 cursor-pointer bg-transparent">
-                            See More
-                        </button>
-                    </div>
                 </div>
             </section>
         </>
     )
-
 }
 
 export default RecommendedCars

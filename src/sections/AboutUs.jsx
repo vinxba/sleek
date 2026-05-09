@@ -1,5 +1,5 @@
 import { motion } from "motion/react"
-import aboutImage from "@/assets/images/about.webp"
+import aboutImage from "@/assets/images/dubai.jpg"
 import pointerArrow from "@/assets/svg/pointer-bash.svg"
 
 const AboutUs = () => {
@@ -37,14 +37,17 @@ const AboutUs = () => {
                             </span>
 
                             <div className="flex flex-col gap-1">
-                                <h2 className="font-heading font-bold text-brand-gold text-heading-xl leading-tight">
+                                {/* Changed text-brand-gold to text-white */}
+                                <h2 className="font-heading font-bold text-white text-heading-xl leading-tight">
                                     Built for the
                                 </h2>
                                 <div className="flex items-center gap-4">
-                                    <h2 className="font-heading font-bold text-brand-gold text-heading-xl leading-tight">
+                                    {/* Changed text-brand-gold to text-white */}
+                                    <h2 className="font-heading font-bold text-white text-heading-xl leading-tight">
                                         Drive Ahead
                                     </h2>
-                                    <img src={pointerArrow} alt="" className="mt-1 shrink-0" />
+                                    {/* Added invert to make the arrow visible on dark bg */}
+                                    <img src={pointerArrow} alt="" className="mt-1 shrink-0 invert" />
                                 </div>
                             </div>
 
@@ -56,15 +59,6 @@ const AboutUs = () => {
                                     Whether you're visiting Dubai for business, leisure, or a long-term stay, Sleek offers a diverse fleet of well-maintained vehicles — from stylish sedans and luxury cars to powerful SUVs — ensuring a smooth and effortless driving experience. Our vehicles are equipped with modern features, delivering safety, performance, and sophistication on every journey.
                                 </p>
                             </div>
-
-                            {/* <div className="mt-8">
-                                <button className="flex items-center gap-3 bg-brand-gold text-brand-dark font-heading font-semibold text-body px-6 py-3 rounded-lg hover:bg-brand-gold-dark transition-colors duration-200 cursor-pointer border-none">
-                                    Read More
-                                    <span className="w-7 h-7 flex items-center justify-center rounded-full bg-brand-dark/20">
-                                        <MoveRight />
-                                    </span>
-                                </button>
-                            </div> */}
 
                         </motion.div>
 

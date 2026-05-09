@@ -59,13 +59,14 @@ const Brands = () => {
                             <img
                                 src={pointerArrow}
                                 alt=""
-                                className="shrink-0"
+                                className="shrink-0 invert opacity-50" // Added invert/opacity to match the white theme
                                 style={{ transform: "scaleX(-1)" }}
                             />
-                            <h2 className="font-heading font-bold text-brand-gold text-heading-lg md:text-heading-xl leading-tight text-center">
+                            {/* Changed text-brand-gold to text-white */}
+                            <h2 className="font-heading font-bold text-white text-heading-lg md:text-heading-xl leading-tight text-center">
                                 Why Sleek is the #1 Car Marketplace
                             </h2>
-                            <img src={pointerArrow} alt="" className="shrink-0" />
+                            <img src={pointerArrow} alt="" className="shrink-0 invert opacity-50" />
                         </div>
                     </div>
 
