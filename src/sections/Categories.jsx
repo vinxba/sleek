@@ -12,33 +12,33 @@ import sonata from "@/assets/cars/fleet/sonataImg.jpg"
 const fleetCategories = [
     {
         id: "luxury",
-        type: "Luxury Cars",
-        description: "Executive travel redefined with Bentley and BMW elite models.",
+        type: "THE EXECUTIVE CLASS",
+        description: "Redefining the gold standard of travel. Experience unrivaled prestige and British craftsmanship with our elite flagship models.",
         image: benely,
         variant: "large"
     },
     {
         id: "suv",
-        type: "SUVs",
-        description: "All-terrain dominance featuring Audi and Toyota premium utility vehicles.",
+        type: "COMMANDING PRESENCE",
+        description: "Master the landscape from a position of absolute power. Elite all-terrain luxury designed for those who refuse to blend in.",
         image: rangerover,
         variant: "large"
     },
     {
         id: "sports",
-        type: "Sports Cars",
-        description: "Raw performance and precision engineering for high-speed transit.",
+        type: "RAW ADRENALINE",
+        description: "Precision engineering designed to ignite the senses. Break the boundaries of speed with our world-class supercar collection.",
         image: lamboAventador,
         variant: "large"
     },
     {
-        id: "spacer", // Empty block to push Economy to the middle column
+        id: "spacer", 
         variant: "empty"
     },
     {
         id: "economy",
-        type: "Economy",
-        description: "Most economy cars available for you.",
+        type: "SMART MOBILITY",
+        description: "Modern efficiency meets premium comfort. High-performance economy models tailored for the sophisticated urban explorer.",
         image: sonata,
         variant: "large"
     },

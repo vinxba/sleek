@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { Calendar, Car, Building2 } from "lucide-react"
 import landingBg from "@/assets/background/landing_bg.webp"
-import car1 from "@/assets/cars/landing_car_1.png"
+import car1 from "@/assets/cars/landing_car_1.png"  
 import car2 from "@/assets/cars/landing_car_2.png"
 import car3 from "@/assets/cars/landing_car_3.png"
 
