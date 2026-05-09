@@ -8,7 +8,7 @@ import {
 } from "lucide-react"
 import { fleetCars, faqItems } from "@/data/cars"
 import Navbar from "@/components/Navbar"
-import Footer from "@/components/Footer"
+// import Footer from "@/components/Footer"
 import BookingModal from "@/components/BookingModal"
 import pointerArrow from "@/assets/svg/pointer-bash.svg"
 
@@ -465,7 +465,7 @@ const CarOfferPage = () => {
 
             </main>
 
-            <Footer />
+         
 
         </div>
     )
