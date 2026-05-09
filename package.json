@@ -3,9 +3,12 @@
     "private": true,
     "version": "0.1.0",
     "type": "module",
+    "homepage": "https://vinxba.github.io/sleek/",
     "scripts": {
         "dev": "vite",
         "build": "vite build",
+        "predeploy": "npm run build",
+        "deploy": "gh-pages -d dist",
         "preview": "vite preview",
         "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0"
     },
@@ -32,6 +35,6 @@
         "globals": "^15.9.0",
         "postcss": "^8.4.47",
         "tailwindcss": "^3.4.11",
-        "vite": "^5.4.1"
+        "vite": "^8.0.11"
     }
 }
